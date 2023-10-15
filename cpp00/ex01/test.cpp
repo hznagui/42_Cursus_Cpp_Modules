@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 11:00:32 by hznagui           #+#    #+#             */
-/*   Updated: 2023/10/15 17:59:23 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/10/15 18:52:20 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,12 @@ Contact::Contact()
 Contact::~Contact()
     {
     }
+class PhoneBook
+{
+    public:
+    Contact table[7];
+    
+};
 
 int add(Contact *a)
 {
@@ -65,58 +71,60 @@ int add(Contact *a)
         std::cout << "first_name : ";
         std::getline(std::cin, str);
         if (! str[0])
-            return ( std::cout << "you should fill all "<< std::endl,1);
+            return ( std::cout << "\033[31merror: empty information is forbidden\033[0m"<< std::endl,1);
         else
             a->set_first_name(str);
                 
         std::cout << "last_name : ";
         std::getline(std::cin, str);
         if (! str[0])
-            return (std::cout << "you should fill all "<< std::endl,1);
+            return (std::cout << "\033[31merror: empty information is forbidden\033[0m"<< std::endl,1);
         else
             a->set_last_name(str);
         
         std::cout << "nickname : ";
         std::getline(std::cin, str);
         if (! str[0])
-            return ( std::cout << "you should fill all "<< std::endl,1);
+            return ( std::cout << "\033[31merror: empty information is forbidden\033[0m"<< std::endl,1);
         else
             a->set_nickname(str);
             
         std::cout << "phone_number : ";
         std::getline(std::cin, str);
         if (! str[0])
-            return ( std::cout << "you should fill all "<< std::endl,1);
+            return ( std::cout << "\033[31merror: empty information is forbidden\033[0m"<< std::endl,1);
         else
             a->set_phone_number(str);
         
         std::cout << "darkest_secret : ";
         std::getline(std::cin, str);
         if (! str[0])
-            return ( std::cout << "you should fill all "<< std::endl,1);
+            return ( std::cout << "\033[31merror: empty information is forbidden\033[0m"<< std::endl,1);
         else
             a->set_darkest_secret(str);
         
-    return (std::cout << "your Contact has been created succefly "<< std::endl,0); 
+    return (std::cout << "\033[32myour Contact has been created succefly \033[0m"<< std::endl,0); 
 }
   
 int main()
 {
-    Contact a1;
+    PhoneBook i;
     std::string input;
     int a = 1;
     while (a)
     {
-        std::cout << "witch commend you want ? "<< std::endl;
+        std::cout << "\033[35mPhoneBook MENU:\nADD\nSEARCH\nEXIT\033[0m"<< std::endl  ;
         getline(std::cin,input);
         if (input == "ADD")
             {
-                add(&a1);
+                add(&i.table[1]);
             }
         else if (input == "EXIT")
             {
-                a=0;
-            std::cout << "goood bye "<< std::endl; 
+                a = 0;
+                std::cout << "goood bye "<< std::endl; 
             }
+        else 
+                std::cout << "try one of those "<< std::endl; 
     }
 }
