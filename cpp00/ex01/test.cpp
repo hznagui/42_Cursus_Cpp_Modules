@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 11:00:32 by hznagui           #+#    #+#             */
-/*   Updated: 2023/10/15 19:01:24 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/10/15 19:23:56 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,11 @@ Contact::~Contact()
     }
 class PhoneBook
 {
-    public:
     Contact table[7];
-    
+    public:
+    Contact get_table(int i);
 };
+Contact   PhoneBook:: get_table(int i){return table[i];}
 
 int add(Contact *a)
 {
@@ -106,7 +107,10 @@ int add(Contact *a)
         
     return (std::cout << "\033[32myour Contact has been created succefly \033[0m"<< std::endl,0); 
 }
-  
+// void search(PhoneBook *i)
+// {
+//  i->get_table();   
+// }
 int main()
 {
     PhoneBook i;
@@ -119,12 +123,16 @@ int main()
         getline(std::cin,input);
         if (input == "ADD")
             {
-                tmp = add(&i.table[nbr]);
+                tmp = add(&i.get_table[nbr]);
                 if (!tmp && nbr == 7)
                     nbr=0;
                 else if (!tmp)
                     nbr++;
             }
+        else if (input == "SEARCH")
+        {
+            
+        }
         else if (input == "EXIT")
             {
                 a = 0;
