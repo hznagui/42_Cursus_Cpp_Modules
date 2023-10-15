@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 11:00:32 by hznagui           #+#    #+#             */
-/*   Updated: 2023/10/15 18:52:20 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/10/15 19:01:24 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ Contact::Contact()
 
 Contact::~Contact()
     {
+        
     }
 class PhoneBook
 {
@@ -109,6 +110,7 @@ int add(Contact *a)
 int main()
 {
     PhoneBook i;
+    int tmp=0,nbr=0;
     std::string input;
     int a = 1;
     while (a)
@@ -117,7 +119,11 @@ int main()
         getline(std::cin,input);
         if (input == "ADD")
             {
-                add(&i.table[1]);
+                tmp = add(&i.table[nbr]);
+                if (!tmp && nbr == 7)
+                    nbr=0;
+                else if (!tmp)
+                    nbr++;
             }
         else if (input == "EXIT")
             {
