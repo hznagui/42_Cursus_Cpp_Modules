@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 11:00:32 by hznagui           #+#    #+#             */
-/*   Updated: 2023/10/15 17:29:46 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/10/15 17:59:23 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,17 @@ class Contact
     std::string darkest_secret;
     public:
     
-    set_first_name(std::string a);
-    set_last_name(std::string a);
-    set_nickname(std::string a);
-    set_phone_number(std::string a);
-    set_darkest_secret(std::string a);
+    void set_first_name(std::string a);
+    void set_last_name(std::string a);
+    void set_nickname(std::string a);
+    void set_phone_number(std::string a);
+    void set_darkest_secret(std::string a);
 
-    get_first_name(void);
-    get_last_name(void);
-    get_nickname(void);
-    get_phone_number(void);
-    get_darkest_secret(void);
+    std::string get_first_name(void);
+    std::string get_last_name(void);
+    std::string get_nickname(void);
+    std::string get_phone_number(void);
+    std::string get_darkest_secret(void);
     
     Contact();
     ~Contact();
@@ -53,11 +53,10 @@ class Contact
 Contact::Contact()
     {
         
-    } 
+    }
 
 Contact::~Contact()
     {
-        std::cout << "sf salat" << std::endl;
     }
 
 int add(Contact *a)
@@ -76,8 +75,6 @@ int add(Contact *a)
             return (std::cout << "you should fill all "<< std::endl,1);
         else
             a->set_last_name(str);
-            
-        // std::cout<< a->get_first_name() <<std::endl;
         
         std::cout << "nickname : ";
         std::getline(std::cin, str);
@@ -99,14 +96,27 @@ int add(Contact *a)
             return ( std::cout << "you should fill all "<< std::endl,1);
         else
             a->set_darkest_secret(str);
-    return 0; 
+        
+    return (std::cout << "your Contact has been created succefly "<< std::endl,0); 
 }
   
 int main()
 {
     Contact a1;
-    add(&a1);
-    // std::cout <<"a1 = "<< a1.a << " a2 = "<< a2.a << std::endl;
-    // a1.a++;
-    // std::cout <<"a1 = "<< a1.a << " a2 = "<< a2.a << std::endl;
+    std::string input;
+    int a = 1;
+    while (a)
+    {
+        std::cout << "witch commend you want ? "<< std::endl;
+        getline(std::cin,input);
+        if (input == "ADD")
+            {
+                add(&a1);
+            }
+        else if (input == "EXIT")
+            {
+                a=0;
+            std::cout << "goood bye "<< std::endl; 
+            }
+    }
 }
