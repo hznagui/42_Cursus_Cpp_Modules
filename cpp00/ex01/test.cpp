@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 11:00:32 by hznagui           #+#    #+#             */
-/*   Updated: 2023/10/16 11:04:20 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/10/16 11:33:39 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,14 +127,29 @@ void search(PhoneBook *i)
     std::cout<<"         8"<< "|"<<i->get_table(7)->get_first_name()<<"|"<<i->get_table(7)->get_last_name()<<"|"<<i->get_table(7)->get_nickname()<<std::endl;
     std::cout << "chose one of them using index ? ";
     getline(std::cin,y);
-    // if (y>=1 && y<=8)
-    // {
-    //     std::cout<<"ok sbar \n";
-    // }
-    // else 
-    // {
-    //         std::cout << "\033[31merror: empty information is forbidden\033[0m"<< std::endl;
-    // }
+    if(!std::cin)
+    {
+        std::cout << "\033[31mfailure ;)\033[0m\n";
+        return 1;
+    }
+    if (y == "1")
+            std::cout<<i->get_table(0)->get_first_name()<<"|"<<i->get_table(0)->get_last_name()<<"|"<<i->get_table(0)->get_nickname()<<"|"<<i->get_table(0)->get_phone_number() <<"|"<<i->get_table(0)->get_darkest_secret() <<std::endl;
+    else if (y == "2")
+            std::cout<<i->get_table(1)->get_first_name()<<"|"<<i->get_table(1)->get_last_name()<<"|"<<i->get_table(1)->get_nickname()<<"|"<<i->get_table(1)->get_phone_number() <<"|"<<i->get_table(1)->get_darkest_secret() <<std::endl;
+    else if (y == "3")
+            std::cout<<i->get_table(2)->get_first_name()<<"|"<<i->get_table(2)->get_last_name()<<"|"<<i->get_table(2)->get_nickname()<<"|"<<i->get_table(2)->get_phone_number() <<"|"<<i->get_table(2)->get_darkest_secret() <<std::endl;
+    else if (y == "4")
+            std::cout<<i->get_table(3)->get_first_name()<<"|"<<i->get_table(3)->get_last_name()<<"|"<<i->get_table(3)->get_nickname()<<"|"<<i->get_table(3)->get_phone_number() <<"|"<<i->get_table(3)->get_darkest_secret() <<std::endl;
+    else if (y == "5")
+            std::cout<<i->get_table(4)->get_first_name()<<"|"<<i->get_table(4)->get_last_name()<<"|"<<i->get_table(4)->get_nickname()<<"|"<<i->get_table(4)->get_phone_number() <<"|"<<i->get_table(4)->get_darkest_secret() <<std::endl;
+    else if (y == "6")
+            std::cout<<i->get_table(5)->get_first_name()<<"|"<<i->get_table(5)->get_last_name()<<"|"<<i->get_table(5)->get_nickname()<<"|"<<i->get_table(5)->get_phone_number() <<"|"<<i->get_table(5)->get_darkest_secret() <<std::endl;
+    else if (y == "7")
+            std::cout<<i->get_table(6)->get_first_name()<<"|"<<i->get_table(6)->get_last_name()<<"|"<<i->get_table(6)->get_nickname()<<"|"<<i->get_table(6)->get_phone_number() <<"|"<<i->get_table(6)->get_darkest_secret() <<std::endl;
+    else if (y == "8")
+            std::cout<<i->get_table(7)->get_first_name()<<"|"<<i->get_table(7)->get_last_name()<<"|"<<i->get_table(7)->get_nickname()<<"|"<<i->get_table(7)->get_phone_number() <<"|"<<i->get_table(7)->get_darkest_secret() <<std::endl;
+    else
+        std::cout << "\033[31merror: need some index\033[0m"<<std::endl;
 }
 int main()
 {
@@ -146,6 +161,12 @@ int main()
     {
         std::cout << "\033[35mPhoneBook MENU:\nADD\nSEARCH\nEXIT\033[0m"<< std::endl  ;
         getline(std::cin,input);
+         if(!std::cin)
+        {
+            std::cout << "\033[31mfailure ;)\033[0m\n";
+            return 1;
+        }
+                std::cout << input << std::endl; 
         if (input == "ADD")
         {
             tmp = add(i.get_table(nbr));
@@ -161,7 +182,7 @@ int main()
         else if (input == "EXIT")
             {
                 a = 0;
-                std::cout << "goood bye "<< std::endl; 
+                std::cout << "\033[1m\033[33mgoood bye "<< std::endl; 
             }
         else 
                 std::cout << "try one of those "<< std::endl; 
