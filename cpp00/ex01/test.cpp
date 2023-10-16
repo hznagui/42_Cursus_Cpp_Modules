@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 11:00:32 by hznagui           #+#    #+#             */
-/*   Updated: 2023/10/16 14:21:13 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/10/16 14:39:25 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -174,21 +174,21 @@ int search(PhoneBook *i)
     if (ft_error())
         return 1;
     if (y == "1")
-            std::cout<<i->get_table(0)->get_first_name()<<"|"<<i->get_table(0)->get_last_name()<<"|"<<i->get_table(0)->get_nickname()<<"|"<<i->get_table(0)->get_phone_number() <<"|"<<i->get_table(0)->get_darkest_secret() <<std::endl;
+            std::cout<<"first_name: "<<i->get_table(0)->get_first_name()<<" last name: "<<i->get_table(0)->get_last_name()<<" nickname : "<<i->get_table(0)->get_nickname()<<" phone number: "<<i->get_table(0)->get_phone_number() <<" darkest secret: "<<i->get_table(0)->get_darkest_secret() <<std::endl;
     else if (y == "2")
-            std::cout<<i->get_table(1)->get_first_name()<<"|"<<i->get_table(1)->get_last_name()<<"|"<<i->get_table(1)->get_nickname()<<"|"<<i->get_table(1)->get_phone_number() <<"|"<<i->get_table(1)->get_darkest_secret() <<std::endl;
+            std::cout<<"first_name: "<<i->get_table(1)->get_first_name()<<" last name: "<<i->get_table(1)->get_last_name()<<" nickname : "<<i->get_table(1)->get_nickname()<<" phone number: "<<i->get_table(1)->get_phone_number() <<" darkest secret: "<<i->get_table(1)->get_darkest_secret() <<std::endl;
     else if (y == "3")
-            std::cout<<i->get_table(2)->get_first_name()<<"|"<<i->get_table(2)->get_last_name()<<"|"<<i->get_table(2)->get_nickname()<<"|"<<i->get_table(2)->get_phone_number() <<"|"<<i->get_table(2)->get_darkest_secret() <<std::endl;
+            std::cout<<"first_name: "<<i->get_table(2)->get_first_name()<<" last name: "<<i->get_table(2)->get_last_name()<<" nickname : "<<i->get_table(2)->get_nickname()<<" phone number: "<<i->get_table(2)->get_phone_number() <<" darkest secret: "<<i->get_table(2)->get_darkest_secret() <<std::endl;
     else if (y == "4")
-            std::cout<<i->get_table(3)->get_first_name()<<"|"<<i->get_table(3)->get_last_name()<<"|"<<i->get_table(3)->get_nickname()<<"|"<<i->get_table(3)->get_phone_number() <<"|"<<i->get_table(3)->get_darkest_secret() <<std::endl;
+            std::cout<<"first_name: "<<i->get_table(3)->get_first_name()<<" last name: "<<i->get_table(3)->get_last_name()<<" nickname : "<<i->get_table(3)->get_nickname()<<" phone number: "<<i->get_table(3)->get_phone_number() <<" darkest secret: "<<i->get_table(3)->get_darkest_secret() <<std::endl;
     else if (y == "5")
-            std::cout<<i->get_table(4)->get_first_name()<<"|"<<i->get_table(4)->get_last_name()<<"|"<<i->get_table(4)->get_nickname()<<"|"<<i->get_table(4)->get_phone_number() <<"|"<<i->get_table(4)->get_darkest_secret() <<std::endl;
+            std::cout<<"first_name: "<<i->get_table(4)->get_first_name()<<" last name: "<<i->get_table(4)->get_last_name()<<" nickname : "<<i->get_table(4)->get_nickname()<<" phone number: "<<i->get_table(4)->get_phone_number() <<" darkest secret: "<<i->get_table(4)->get_darkest_secret() <<std::endl;
     else if (y == "6")
-            std::cout<<i->get_table(5)->get_first_name()<<"|"<<i->get_table(5)->get_last_name()<<"|"<<i->get_table(5)->get_nickname()<<"|"<<i->get_table(5)->get_phone_number() <<"|"<<i->get_table(5)->get_darkest_secret() <<std::endl;
+            std::cout<<"first_name: "<<i->get_table(5)->get_first_name()<<" last name: "<<i->get_table(5)->get_last_name()<<" nickname : "<<i->get_table(5)->get_nickname()<<" phone number: "<<i->get_table(5)->get_phone_number() <<" darkest secret: "<<i->get_table(5)->get_darkest_secret() <<std::endl;
     else if (y == "7")
-            std::cout<<i->get_table(6)->get_first_name()<<"|"<<i->get_table(6)->get_last_name()<<"|"<<i->get_table(6)->get_nickname()<<"|"<<i->get_table(6)->get_phone_number() <<"|"<<i->get_table(6)->get_darkest_secret() <<std::endl;
+            std::cout<<"first_name: "<<i->get_table(6)->get_first_name()<<" last name: "<<i->get_table(6)->get_last_name()<<" nickname : "<<i->get_table(6)->get_nickname()<<" phone number: "<<i->get_table(6)->get_phone_number() <<" darkest secret: "<<i->get_table(6)->get_darkest_secret() <<std::endl;
     else if (y == "8")
-            std::cout<<i->get_table(7)->get_first_name()<<"|"<<i->get_table(7)->get_last_name()<<"|"<<i->get_table(7)->get_nickname()<<"|"<<i->get_table(7)->get_phone_number() <<"|"<<i->get_table(7)->get_darkest_secret() <<std::endl;
+            std::cout<<"first_name: "<<i->get_table(7)->get_first_name()<<" last name: "<<i->get_table(7)->get_last_name()<<" nickname : "<<i->get_table(7)->get_nickname()<<" phone number: "<<i->get_table(7)->get_phone_number() <<" darkest secret: "<<i->get_table(7)->get_darkest_secret() <<std::endl;
     else
         std::cout << "\033[31merror: need some index\033[0m"<<std::endl;
     return 0;
