@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 11:00:32 by hznagui           #+#    #+#             */
-/*   Updated: 2023/10/16 14:18:34 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/10/16 14:21:13 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -152,7 +152,7 @@ std::string check(std::string str)
         return str;
     else if (ft_strlen(str) < 11)
     {
-        while (ft_strlen(str)<11)
+        while (ft_strlen(str)<10)
             str =" "+str;
     }
     return str;
@@ -161,14 +161,14 @@ int search(PhoneBook *i)
 {
     std::string y;
     std::cout<<"     index"<< "|"<<"first name"<<"|"<<" last name"<<"|"<<"  nickname"<<std::endl;
-    std::cout<<"         1"<< "|"<<check(i->get_table(0)->get_first_name())<<"|"<<i->get_table(0)->get_last_name()<<"|"<<i->get_table(0)->get_nickname()<<std::endl;
-    std::cout<<"         2"<< "|"<<i->get_table(1)->get_first_name()<<"|"<<i->get_table(1)->get_last_name()<<"|"<<i->get_table(1)->get_nickname()<<std::endl;
-    std::cout<<"         3"<< "|"<<i->get_table(2)->get_first_name()<<"|"<<i->get_table(2)->get_last_name()<<"|"<<i->get_table(2)->get_nickname()<<std::endl;
-    std::cout<<"         4"<< "|"<<i->get_table(3)->get_first_name()<<"|"<<i->get_table(3)->get_last_name()<<"|"<<i->get_table(3)->get_nickname()<<std::endl;
-    std::cout<<"         5"<< "|"<<i->get_table(4)->get_first_name()<<"|"<<i->get_table(4)->get_last_name()<<"|"<<i->get_table(4)->get_nickname()<<std::endl;
-    std::cout<<"         6"<< "|"<<i->get_table(5)->get_first_name()<<"|"<<i->get_table(5)->get_last_name()<<"|"<<i->get_table(5)->get_nickname()<<std::endl;
-    std::cout<<"         7"<< "|"<<i->get_table(6)->get_first_name()<<"|"<<i->get_table(6)->get_last_name()<<"|"<<i->get_table(6)->get_nickname()<<std::endl;
-    std::cout<<"         8"<< "|"<<i->get_table(7)->get_first_name()<<"|"<<i->get_table(7)->get_last_name()<<"|"<<i->get_table(7)->get_nickname()<<std::endl;
+    std::cout<<"         1"<< "|"<<check(i->get_table(0)->get_first_name())<<"|"<<check(i->get_table(0)->get_last_name())<<"|"<<check(i->get_table(0)->get_nickname())<<std::endl;
+    std::cout<<"         2"<< "|"<<check(i->get_table(1)->get_first_name())<<"|"<<check(i->get_table(1)->get_last_name())<<"|"<<check(i->get_table(1)->get_nickname())<<std::endl;
+    std::cout<<"         3"<< "|"<<check(i->get_table(2)->get_first_name())<<"|"<<check(i->get_table(2)->get_last_name())<<"|"<<check(i->get_table(2)->get_nickname())<<std::endl;
+    std::cout<<"         4"<< "|"<<check(i->get_table(3)->get_first_name())<<"|"<<check(i->get_table(3)->get_last_name())<<"|"<<check(i->get_table(3)->get_nickname())<<std::endl;
+    std::cout<<"         5"<< "|"<<check(i->get_table(4)->get_first_name())<<"|"<<check(i->get_table(4)->get_last_name())<<"|"<<check(i->get_table(4)->get_nickname())<<std::endl;
+    std::cout<<"         6"<< "|"<<check(i->get_table(5)->get_first_name())<<"|"<<check(i->get_table(5)->get_last_name())<<"|"<<check(i->get_table(5)->get_nickname())<<std::endl;
+    std::cout<<"         7"<< "|"<<check(i->get_table(6)->get_first_name())<<"|"<<check(i->get_table(6)->get_last_name())<<"|"<<check(i->get_table(6)->get_nickname())<<std::endl;
+    std::cout<<"         8"<< "|"<<check(i->get_table(7)->get_first_name())<<"|"<<check(i->get_table(7)->get_last_name())<<"|"<<check(i->get_table(7)->get_nickname())<<std::endl;
     std::cout << "chose one of them using index ? ";
     getline(std::cin,y);
     if (ft_error())
