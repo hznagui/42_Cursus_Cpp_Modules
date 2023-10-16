@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:01:53 by hznagui           #+#    #+#             */
-/*   Updated: 2023/10/16 15:13:57 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/10/16 16:05:15 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,4 @@ Contact::Contact()
     nickname="          ";
     phone_number="          ";
     darkest_secret="          ";
-    }
-
-Contact::~Contact()
-    {
-        
     }

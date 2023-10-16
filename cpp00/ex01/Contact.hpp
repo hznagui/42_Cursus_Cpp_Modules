@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:05:08 by hznagui           #+#    #+#             */
-/*   Updated: 2023/10/16 15:26:24 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/10/16 16:05:21 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ class Contact
     std::string get_darkest_secret(void);
     
     Contact();
-    ~Contact();
 };
 #include "PhoneBook.hpp"
 
