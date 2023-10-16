@@ -6,13 +6,13 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 11:00:32 by hznagui           #+#    #+#             */
-/*   Updated: 2023/10/16 12:05:40 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/10/16 14:18:34 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <stdio.h>
-
+#include <string>
 class Contact
 {
     std::string first_name;
@@ -70,7 +70,6 @@ class PhoneBook
 };
 Contact*   PhoneBook:: get_table(int i){return &table[i];}
 
-// std::string check(std::string *)
 int ft_error()
 {
     if(!std::cin)
@@ -139,11 +138,30 @@ int add(Contact *a)
         
     return (std::cout << "\033[32myour Contact has been created succefly \033[0m"<< std::endl,0); 
 }
+
+std::string check(std::string str)
+{
+    std::string ret="          ";
+    
+    if (ft_strlen(str) > 11)
+    {
+        str.erase(9);
+        str+=".";
+    }
+    else if (ft_strlen(str) == 11)
+        return str;
+    else if (ft_strlen(str) < 11)
+    {
+        while (ft_strlen(str)<11)
+            str =" "+str;
+    }
+    return str;
+}
 int search(PhoneBook *i)
 {
     std::string y;
     std::cout<<"     index"<< "|"<<"first name"<<"|"<<" last name"<<"|"<<"  nickname"<<std::endl;
-    std::cout<<"         1"<< "|"<<i->get_table(0)->get_first_name()<<"|"<<i->get_table(0)->get_last_name()<<"|"<<i->get_table(0)->get_nickname()<<std::endl;
+    std::cout<<"         1"<< "|"<<check(i->get_table(0)->get_first_name())<<"|"<<i->get_table(0)->get_last_name()<<"|"<<i->get_table(0)->get_nickname()<<std::endl;
     std::cout<<"         2"<< "|"<<i->get_table(1)->get_first_name()<<"|"<<i->get_table(1)->get_last_name()<<"|"<<i->get_table(1)->get_nickname()<<std::endl;
     std::cout<<"         3"<< "|"<<i->get_table(2)->get_first_name()<<"|"<<i->get_table(2)->get_last_name()<<"|"<<i->get_table(2)->get_nickname()<<std::endl;
     std::cout<<"         4"<< "|"<<i->get_table(3)->get_first_name()<<"|"<<i->get_table(3)->get_last_name()<<"|"<<i->get_table(3)->get_nickname()<<std::endl;
