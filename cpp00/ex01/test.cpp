@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 11:00:32 by hznagui           #+#    #+#             */
-/*   Updated: 2023/10/16 11:33:39 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/10/16 12:05:40 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ class Contact
     std::string phone_number;
     std::string darkest_secret;
     public:
-    
     void set_first_name(std::string a);
     void set_last_name(std::string a);
     void set_nickname(std::string a);
@@ -72,48 +71,75 @@ class PhoneBook
 Contact*   PhoneBook:: get_table(int i){return &table[i];}
 
 // std::string check(std::string *)
-
+int ft_error()
+{
+    if(!std::cin)
+    {
+        std::cout << "\033[31mfailure ;)\033[0m\n";
+        return 1;
+    }
+    return 0;
+}
+int ft_strlen(std::string str)
+{
+    int i = 0;
+    while (str[i])
+        i++;
+    return i;
+}
 int add(Contact *a)
 {
     std::string str;
         std::cout << "first_name : ";
         std::getline(std::cin, str);
+        if (ft_error())
+            return 1;
         if (! str[0])
-            return ( std::cout << "\033[31merror: empty information is forbidden\033[0m"<< std::endl,1);
+            return ( std::cout << "\033[31merror: empty information is forbidden\033[0m"<< std::endl,2);
         else
             a->set_first_name(str);
                 
         std::cout << "last_name : ";
         std::getline(std::cin, str);
+        if (ft_error())
+            return 1;
+        
         if (! str[0])
-            return (std::cout << "\033[31merror: empty information is forbidden\033[0m"<< std::endl,1);
+            return (std::cout << "\033[31merror: empty information is forbidden\033[0m"<< std::endl,2);
         else
             a->set_last_name(str);
         
         std::cout << "nickname : ";
         std::getline(std::cin, str);
+        if (ft_error())
+            return 1;
+        
         if (! str[0])
-            return ( std::cout << "\033[31merror: empty information is forbidden\033[0m"<< std::endl,1);
+            return ( std::cout << "\033[31merror: empty information is forbidden\033[0m"<< std::endl,2);
         else
             a->set_nickname(str);
             
         std::cout << "phone_number : ";
         std::getline(std::cin, str);
+        if (ft_error())
+            return 1;
         if (! str[0])
-            return ( std::cout << "\033[31merror: empty information is forbidden\033[0m"<< std::endl,1);
+            return ( std::cout << "\033[31merror: empty information is forbidden\033[0m"<< std::endl,2);
         else
             a->set_phone_number(str);
         
         std::cout << "darkest_secret : ";
         std::getline(std::cin, str);
+        if (ft_error())
+            return 1;
         if (! str[0])
-            return ( std::cout << "\033[31merror: empty information is forbidden\033[0m"<< std::endl,1);
+            return ( std::cout << "\033[31merror: empty information is forbidden\033[0m"<< std::endl,2);
         else
             a->set_darkest_secret(str);
         
     return (std::cout << "\033[32myour Contact has been created succefly \033[0m"<< std::endl,0); 
 }
-void search(PhoneBook *i)
+int search(PhoneBook *i)
 {
     std::string y;
     std::cout<<"     index"<< "|"<<"first name"<<"|"<<" last name"<<"|"<<"  nickname"<<std::endl;
@@ -127,11 +153,8 @@ void search(PhoneBook *i)
     std::cout<<"         8"<< "|"<<i->get_table(7)->get_first_name()<<"|"<<i->get_table(7)->get_last_name()<<"|"<<i->get_table(7)->get_nickname()<<std::endl;
     std::cout << "chose one of them using index ? ";
     getline(std::cin,y);
-    if(!std::cin)
-    {
-        std::cout << "\033[31mfailure ;)\033[0m\n";
+    if (ft_error())
         return 1;
-    }
     if (y == "1")
             std::cout<<i->get_table(0)->get_first_name()<<"|"<<i->get_table(0)->get_last_name()<<"|"<<i->get_table(0)->get_nickname()<<"|"<<i->get_table(0)->get_phone_number() <<"|"<<i->get_table(0)->get_darkest_secret() <<std::endl;
     else if (y == "2")
@@ -150,6 +173,7 @@ void search(PhoneBook *i)
             std::cout<<i->get_table(7)->get_first_name()<<"|"<<i->get_table(7)->get_last_name()<<"|"<<i->get_table(7)->get_nickname()<<"|"<<i->get_table(7)->get_phone_number() <<"|"<<i->get_table(7)->get_darkest_secret() <<std::endl;
     else
         std::cout << "\033[31merror: need some index\033[0m"<<std::endl;
+    return 0;
 }
 int main()
 {
@@ -161,23 +185,30 @@ int main()
     {
         std::cout << "\033[35mPhoneBook MENU:\nADD\nSEARCH\nEXIT\033[0m"<< std::endl  ;
         getline(std::cin,input);
-         if(!std::cin)
-        {
-            std::cout << "\033[31mfailure ;)\033[0m\n";
+        if (ft_error())
             return 1;
-        }
-                std::cout << input << std::endl; 
         if (input == "ADD")
         {
             tmp = add(i.get_table(nbr));
+            if (tmp == 1)
+                return 1;
             if (!tmp && nbr == 7)
                 nbr = 0;
             else if (!tmp)
                 nbr++;
+            else
+            {
+                    i.get_table(nbr)->set_first_name("          ");
+                    i.get_table(nbr)->set_last_name("          ");
+                    i.get_table(nbr)->set_nickname("          ");
+                    i.get_table(nbr)->set_phone_number("          ");
+                    i.get_table(nbr)->set_darkest_secret("          ");
+            }
         }
         else if (input == "SEARCH")
         {
-            search(&i);
+            if (search(&i))
+                return 1;
         }
         else if (input == "EXIT")
             {
