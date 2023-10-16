@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 11:00:32 by hznagui           #+#    #+#             */
-/*   Updated: 2023/10/15 19:23:56 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/10/16 11:04:20 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,11 @@ class Contact
 
 Contact::Contact()
     {
-        
+    first_name="          ";
+    last_name="          ";
+    nickname="          ";
+    phone_number="          ";
+    darkest_secret="          ";
     }
 
 Contact::~Contact()
@@ -61,11 +65,13 @@ Contact::~Contact()
     }
 class PhoneBook
 {
-    Contact table[7];
+    Contact table[8];
     public:
-    Contact get_table(int i);
+    Contact *get_table(int i);
 };
-Contact   PhoneBook:: get_table(int i){return table[i];}
+Contact*   PhoneBook:: get_table(int i){return &table[i];}
+
+// std::string check(std::string *)
 
 int add(Contact *a)
 {
@@ -107,14 +113,33 @@ int add(Contact *a)
         
     return (std::cout << "\033[32myour Contact has been created succefly \033[0m"<< std::endl,0); 
 }
-// void search(PhoneBook *i)
-// {
-//  i->get_table();   
-// }
+void search(PhoneBook *i)
+{
+    std::string y;
+    std::cout<<"     index"<< "|"<<"first name"<<"|"<<" last name"<<"|"<<"  nickname"<<std::endl;
+    std::cout<<"         1"<< "|"<<i->get_table(0)->get_first_name()<<"|"<<i->get_table(0)->get_last_name()<<"|"<<i->get_table(0)->get_nickname()<<std::endl;
+    std::cout<<"         2"<< "|"<<i->get_table(1)->get_first_name()<<"|"<<i->get_table(1)->get_last_name()<<"|"<<i->get_table(1)->get_nickname()<<std::endl;
+    std::cout<<"         3"<< "|"<<i->get_table(2)->get_first_name()<<"|"<<i->get_table(2)->get_last_name()<<"|"<<i->get_table(2)->get_nickname()<<std::endl;
+    std::cout<<"         4"<< "|"<<i->get_table(3)->get_first_name()<<"|"<<i->get_table(3)->get_last_name()<<"|"<<i->get_table(3)->get_nickname()<<std::endl;
+    std::cout<<"         5"<< "|"<<i->get_table(4)->get_first_name()<<"|"<<i->get_table(4)->get_last_name()<<"|"<<i->get_table(4)->get_nickname()<<std::endl;
+    std::cout<<"         6"<< "|"<<i->get_table(5)->get_first_name()<<"|"<<i->get_table(5)->get_last_name()<<"|"<<i->get_table(5)->get_nickname()<<std::endl;
+    std::cout<<"         7"<< "|"<<i->get_table(6)->get_first_name()<<"|"<<i->get_table(6)->get_last_name()<<"|"<<i->get_table(6)->get_nickname()<<std::endl;
+    std::cout<<"         8"<< "|"<<i->get_table(7)->get_first_name()<<"|"<<i->get_table(7)->get_last_name()<<"|"<<i->get_table(7)->get_nickname()<<std::endl;
+    std::cout << "chose one of them using index ? ";
+    getline(std::cin,y);
+    // if (y>=1 && y<=8)
+    // {
+    //     std::cout<<"ok sbar \n";
+    // }
+    // else 
+    // {
+    //         std::cout << "\033[31merror: empty information is forbidden\033[0m"<< std::endl;
+    // }
+}
 int main()
 {
     PhoneBook i;
-    int tmp=0,nbr=0;
+    int tmp = 0,nbr = 0;
     std::string input;
     int a = 1;
     while (a)
@@ -122,16 +147,16 @@ int main()
         std::cout << "\033[35mPhoneBook MENU:\nADD\nSEARCH\nEXIT\033[0m"<< std::endl  ;
         getline(std::cin,input);
         if (input == "ADD")
-            {
-                tmp = add(&i.get_table[nbr]);
-                if (!tmp && nbr == 7)
-                    nbr=0;
-                else if (!tmp)
-                    nbr++;
-            }
+        {
+            tmp = add(i.get_table(nbr));
+            if (!tmp && nbr == 7)
+                nbr = 0;
+            else if (!tmp)
+                nbr++;
+        }
         else if (input == "SEARCH")
         {
-            
+            search(&i);
         }
         else if (input == "EXIT")
             {
