@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 17:12:59 by hznagui           #+#    #+#             */
-/*   Updated: 2023/10/21 11:57:34 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/10/21 14:06:12 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,14 @@ void randomChump( std::string name )
     }
     ret->announce();
     delete ret;   
+}
+
+int main ()
+{
+    Zombie *p1=newZombie("tom"),*p2=newZombie("jerry");
+    p1->announce();
+    p2->announce();
+    randomChump("sa3id");
+    delete p1;
+    delete p2;
 }
