@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 17:08:59 by hznagui           #+#    #+#             */
-/*   Updated: 2023/10/21 11:51:37 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/10/21 13:53:23 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void Zombie::announce()
 
 Zombie::~Zombie()
 {
-    std::cout << name << " is gone"<<std::endl;
+    std::cout << name <<" destructor is called "<<std::endl;
 }
 void Zombie::set_name(std::string Name)
 {
