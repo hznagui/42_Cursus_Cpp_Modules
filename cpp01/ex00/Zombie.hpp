@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 17:09:45 by hznagui           #+#    #+#             */
-/*   Updated: 2023/10/20 17:40:37 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/10/21 11:49:07 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,9 @@ class Zombie
     std::string name;
     public:
     void announce( void );
-    Zombie(std::string Name);
-    
+    ~Zombie();
+    void set_name(std::string Name);
+    std::string get_name();
 };
 
 #endif
