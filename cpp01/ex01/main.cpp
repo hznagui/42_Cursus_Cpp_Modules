@@ -6,40 +6,25 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 17:12:59 by hznagui           #+#    #+#             */
-/*   Updated: 2023/10/22 11:07:42 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/10/22 12:02:04 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie* newZombie(std::string name)
-{
-    Zombie *ret=new(std::nothrow) Zombie;
-    if (!ret)
-        return NULL;
-    ret->set_name(name);
-    return ret;
-}
-void randomChump( std::string name )
-{
-    Zombie *ret = newZombie(name);
-    if (!ret)
-    {
-        std::cout <<name<< " problem in allocation"<< std::endl;
-        return;
-    }
-    ret->announce();
-    delete ret;   
-}
-
 int main ()
 {
-    Zombie *p1=newZombie("tom"),*p2=newZombie("jerry");
-    if (!p1 || !p2)
+    int number=5;
+    Zombie *p1=zombieHorde(number,"sa3id");
+    if (!p1)
         return 1;
-    p1->announce();
-    p2->announce();
-    randomChump("sa3id");
-    delete p1;
-    delete p2;
+    int i = 0;
+while (i<number)
+{
+    std::cout << "nomber "<< i<<" ";
+    p1[i].announce();
+    i++;
+}
+    
+    delete []p1;
 }
