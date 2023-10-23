@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 11:41:26 by hznagui           #+#    #+#             */
-/*   Updated: 2023/10/23 15:31:59 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/10/23 16:35:10 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main(int argc, char **argv)
     if (argc == 4)
     {
         std::fstream src,dest;
-        std::string str,tmp;
+        std::string str,tmp,ret;
         src.open(argv[1]);
         if (!src.is_open())
         {
@@ -35,10 +35,34 @@ int main(int argc, char **argv)
             std::cout << "\033[31mfailure to open new file!\033[0m" << std::endl;
             return 1;
         }
-        dest<<str ;
+        int i=0,j=0;
+        while (str[i])
+        {
+            if (str[i+j]==argv[2][j])
+                {
+                   while((argv[2][j]==str[i+j])&& argv[2][j] && str[i+j])
+                        j++;
+                    if (!argv[2][j])
+                    {
+                        ret+=argv[3];
+                        i+=j;
+                    }
+                    else
+                    {
+                        ret+=str[i];
+                        i++;
+                    }
+                    j=0;
+                }
+            else{ 
+                ret+=str[i];
+                i++;
+                }
+        }
+        dest<<ret ;
         dest.close();
         src.close();
-            
+        
     }
     else {
         std::cout << "we need 3 argement please !"<<std::endl;
