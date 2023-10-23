@@ -6,13 +6,14 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 16:04:11 by hznagui           #+#    #+#             */
-/*   Updated: 2023/10/23 10:44:30 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/10/23 11:02:10 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 #include "HumanA.hpp"
 #include "HumanB.hpp"
+
 int main()
 {
 {
