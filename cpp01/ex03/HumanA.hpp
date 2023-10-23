@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 16:04:03 by hznagui           #+#    #+#             */
-/*   Updated: 2023/10/22 18:22:11 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/10/23 10:57:39 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 #define HUMANA_HPP
 
 #include "Weapon.hpp"
-#include "HumanB.hpp"
 
 
 class HumanA
 {
-    std::string Weapon,name;
+    std::string name;
+    Weapon *Weapon_;
     public:
     void attack();
-    HumanA(string )
+    HumanA(std::string Name, Weapon &weapon);
 };
 
 
