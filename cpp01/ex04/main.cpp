@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 11:41:26 by hznagui           #+#    #+#             */
-/*   Updated: 2023/10/23 16:35:10 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/10/24 09:17:08 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,13 @@ int main(int argc, char **argv)
         src.close();
         
     }
-    else {
+    else
+    {
         std::cout << "we need 3 argement please !"<<std::endl;
-        return 1;}
+        return 1;
+    }
 }
+// ./Sed_is_for_losers test0 "" houdayfa
+// ./Sed_is_for_losers test houdayfa tamago
+// ./Sed_is_for_losers test "" houdayfa
+// ./Sed_is_for_losers test houdayfa ""
