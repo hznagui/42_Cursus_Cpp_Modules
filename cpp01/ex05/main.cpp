@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 09:13:25 by hznagui           #+#    #+#             */
-/*   Updated: 2023/10/24 15:39:07 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/10/25 14:43:29 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 int main()
 {
     Harl a;
-    a.complain("DEBUG");
-    a.complain("INFO");
-    a.complain("WARNING");
-    a.complain("ERROR");
-    a.complain("ERaROR");
+    // a.complain("DEBUG");
+    // a.complain("INFO");
+    // a.complain("WARNING");
+    // a.complain("ERROR");
+    a.complain("error");
 }

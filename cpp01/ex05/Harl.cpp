@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 09:13:31 by hznagui           #+#    #+#             */
-/*   Updated: 2023/10/24 15:38:00 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/10/25 14:42:01 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,18 +35,10 @@ void Harl::error()
 void Harl::complain(std::string level)
 {
     std::string str[4]={"DEBUG","INFO","WARNING","ERROR"};
-    int i = 0,z=0;
-    while (i < 4)
-    {
-        if (level == str[i])
-        {
-            (this->*taible[i])(); 
-            z=1;
-        }
+    int i = 0;
+    while ((i<4) && (str[i] != level.c_str()))
         i++;
-    }
-    if (z==0)
-        std::cout << "check ur argement"<<std::endl;
+    (i < 4) ? ((this->*taible[i])(),1) : (std::cout << "check ur argement"<<std::endl,0);
 }
 Harl::Harl()
 {
