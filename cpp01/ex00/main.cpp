@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 17:12:59 by hznagui           #+#    #+#             */
-/*   Updated: 2023/10/22 11:07:42 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/10/25 15:30:03 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 Zombie* newZombie(std::string name)
 {
-    Zombie *ret=new(std::nothrow) Zombie;
+    Zombie *ret=new(std::nothrow) Zombie(name);
     if (!ret)
         return NULL;
-    ret->set_name(name);
     return ret;
 }
 void randomChump( std::string name )
