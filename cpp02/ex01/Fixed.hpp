@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 16:13:55 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/01 14:54:18 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/01 12:00:51 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ class Fixed
     static const int fractional_bits;
     public:
     Fixed();
-    Fixed(const int);
-    Fixed (const float);
     Fixed(Fixed &obj);
     void operator= ( Fixed &obj);
     ~Fixed();
