@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 16:13:53 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/01 11:54:14 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/01 12:00:58 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,3 +44,4 @@ void Fixed::setRawBits(int const raw)
 {
     number_value=raw;
 }
+const int Fixed::fractional_bits = 8;
