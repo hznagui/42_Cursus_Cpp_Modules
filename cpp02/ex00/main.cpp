@@ -6,22 +6,20 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 10:41:37 by hznagui           #+#    #+#             */
-/*   Updated: 2023/10/31 10:11:13 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/01 11:27:21 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 
-#include <stdio.h>
+#include "Fixed.hpp"
  
-int main()
-{
-    std::fixed();
-    // left shift for negative value
-    printf("2 << -5 = %d\n", (2 << 5));
- 
-    //    right shift for negative value
-    printf("2 >> -5 = %d", (2 >> 5));
- 
-    return 0;//0.0011 00110011 00110011
+int main( void ) {
+Fixed a;
+Fixed b( a );
+Fixed c;
+c = b;
+std::cout << a.getRawBits() << std::endl;
+std::cout << b.getRawBits() << std::endl;
+std::cout << c.getRawBits() << std::endl;
+return 0;
 }

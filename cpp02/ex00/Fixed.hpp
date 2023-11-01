@@ -6,12 +6,14 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 16:13:55 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/01 11:10:00 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/01 11:40:23 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 #define FIXED_HPP
+
+#include <iostream>
 
 class Fixed
 {
@@ -20,8 +22,10 @@ class Fixed
     public:
     Fixed();
     Fixed(Fixed &obj);
-    Fixed &operator = ( Fixed &obj);
+    void operator= ( Fixed &obj);
     ~Fixed();
+    int getRawBits( void );
+    void setRawBits( int const raw );
 };
 
 #endif
