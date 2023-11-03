@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 16:13:53 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/01 12:00:58 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/03 10:05:31 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 Fixed::Fixed()
 {
     std::cout << "Default constructor called" << std::endl;
-    
     number_value=0;
 }
 Fixed::Fixed(Fixed &obj)
