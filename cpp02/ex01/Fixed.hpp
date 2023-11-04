@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 16:13:55 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/04 11:09:02 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/04 14:12:21 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,9 @@ class Fixed
     Fixed();
     Fixed(const int Number);
     Fixed(const float Float);
-    Fixed(Fixed &obj);
-    Fixed &operator= ( Fixed &obj);
+    Fixed(const Fixed &obj);
+    Fixed &operator= (const Fixed &obj);
+    Fixed operator<<
     ~Fixed();
     int getRawBits( void ) const;
     float toFloat( void ) const;

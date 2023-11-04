@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 16:13:53 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/03 11:24:11 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/04 11:09:22 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Fixed::~Fixed()
     std::cout << "Destructor called" << std::endl;
 }
 
-int Fixed::getRawBits()
+int Fixed::getRawBits() const
 {
     
     std::cout << "getRawBits member function called" << std::endl;
