@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 16:13:55 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/03 10:20:33 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/03 11:23:40 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Fixed
     public:
     Fixed();
     Fixed(Fixed &obj);
-    void operator= ( Fixed &obj);
+    Fixed  &operator= ( Fixed &obj);
     ~Fixed();
     int getRawBits( void );
     void setRawBits( int const raw );
