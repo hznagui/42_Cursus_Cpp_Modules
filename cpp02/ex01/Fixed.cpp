@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 16:13:53 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/04 14:09:31 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/04 15:04:32 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,11 @@ Fixed::Fixed(const float Number)
 {
     number_value= roundf(Number*std::pow(2,fractional_bits));
     std::cout<< "Float constructor called" <<std::endl;
+}
+std::ostream &operator<<(std::ostream& os,const Fixed &obj)
+{
+    os<< obj.toFloat();
+    return os;
 }
 Fixed::Fixed(const Fixed &obj)
 {
@@ -59,6 +64,6 @@ int Fixed::toInt( void ) const
 }
 float Fixed::toFloat( void ) const
 {
-    return (this->getRawBits()>>this->fractional_bits);
+    return (this->getRawBits()/std::pow(2,fractional_bits));
 }
 
