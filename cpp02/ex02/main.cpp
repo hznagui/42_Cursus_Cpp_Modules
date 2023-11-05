@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 10:41:37 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/05 12:07:09 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/05 14:05:09 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ std::cout << a << std::endl;
 std::cout << ++a << std::endl;
 std::cout << a << std::endl;
 std::cout << a++ << std::endl;
+std::cout << "hanya" << std::endl;
 std::cout << a << std::endl;
 std::cout << b << std::endl;
-// std::cout << Fixed::max( a, b ) << std::endl;
-
+std::cout << Fixed::max( a, b ) << std::endl;
 return 0;
 }
