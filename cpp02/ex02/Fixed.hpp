@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 16:13:55 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/05 14:09:16 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/05 14:25:29 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ class Fixed
     Fixed &operator*(const Fixed &one);
     Fixed &operator/(const Fixed &one);
     Fixed &operator++();
-    Fixed &operator++(int);
+    Fixed operator++(int);
     Fixed &operator--();
     Fixed &operator--(int);
     static const Fixed &min(const Fixed&one ,const Fixed &two );

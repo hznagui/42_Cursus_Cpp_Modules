@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 16:13:53 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/05 14:19:24 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/05 14:26:01 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,10 +121,11 @@ Fixed &Fixed::operator++()
     ++number_value;
     return *this;
 }
-Fixed &Fixed::operator++(int)
+Fixed Fixed::operator++(int)
 {
+    Fixed tmp=*this;
     number_value++;
-    return *this;
+    return tmp;
 }
 Fixed &Fixed::operator--()
 {
