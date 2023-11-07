@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 16:13:53 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/04 15:04:32 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/07 18:51:46 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ Fixed::Fixed(const int Number)
 }
 Fixed::Fixed(const float Number)
 {
-    number_value= roundf(Number*std::pow(2,fractional_bits));
+    float tmp=Number*256;
+    number_value= roundf(tmp);
     std::cout<< "Float constructor called" <<std::endl;
 }
 std::ostream &operator<<(std::ostream& os,const Fixed &obj)
