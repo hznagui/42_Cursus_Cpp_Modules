@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 09:35:58 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/08 17:00:48 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/08 11:06:03 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int main()
 {
-    // std::string a="alex",b="khalid"
     ClapTrap a1("alex"),a2;
     a1.attack("khalid");
     a2.attack("khalid");
