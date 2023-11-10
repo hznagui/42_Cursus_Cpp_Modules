@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 09:35:52 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/09 11:01:08 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/10 10:56:29 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,11 @@ ClapTrap::ClapTrap(const std::string name)
 
 ClapTrap::ClapTrap(const  ClapTrap &obj)
 {
-    ClapTrap tmp=obj;
-   set_Name(tmp.get_Name());
-    set_energy(tmp.get_energy());
-    set_Attack_points(tmp.get_Attack_points());
-    set_Hit_points(tmp.get_Hit_points());
+    // ClapTrap tmp=obj;
+    set_Name(obj.Name);
+    set_energy(obj.energy);
+    set_Attack_points(obj.Attack_points);
+    set_Hit_points(obj.Hit_points);
     std::cout <<"the copy construtor ClapTrap called"<<std::endl;
 }
 
