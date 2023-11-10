@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 15:29:21 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/08 15:45:34 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/09 11:10:54 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ class ScavTrap:public ClapTrap
 {
     public:
     ScavTrap();
-    ScavTrap(std::string name);
+    ScavTrap(const std::string name);
     ScavTrap(const ScavTrap &obj);
     ScavTrap& operator=(const ScavTrap &obj);
     ~ScavTrap();
     void guardGate();
-}
+};
 #endif

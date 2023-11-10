@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 09:35:52 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/08 17:01:54 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/09 10:59:24 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ ClapTrap::~ClapTrap()
     std::cout <<"the destrutor called"<<std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name)
+ClapTrap::ClapTrap(const std::string name)
 {
     set_Name(name);
     set_energy(10);
@@ -35,21 +35,23 @@ ClapTrap::ClapTrap(std::string name)
     std::cout <<"the Parameterized construtor called"<<std::endl;
 }
 
-ClapTrap::ClapTrap( ClapTrap &obj)
+ClapTrap::ClapTrap(const  ClapTrap &obj)
 {
-   set_Name(obj.get_Name());
-    set_energy(obj.get_energy());
-    set_Attack_points(obj.get_Attack_points());
-    set_Hit_points(obj.get_Hit_points());
+    ClapTrap tmp=obj;
+   set_Name(tmp.get_Name());
+    set_energy(tmp.get_energy());
+    set_Attack_points(tmp.get_Attack_points());
+    set_Hit_points(tmp.get_Hit_points());
     std::cout <<"the copy construtor called"<<std::endl;
 }
 
-ClapTrap &ClapTrap::operator=( ClapTrap &obj)
+ClapTrap &ClapTrap::operator=(const ClapTrap &obj)
 {
-    set_Name(obj.get_Name());
-    set_energy(obj.get_energy());
-    set_Attack_points(obj.get_Attack_points());
-    set_Hit_points(obj.get_Hit_points());
+    ClapTrap tmp=obj;
+    set_Name(tmp.get_Name());
+    set_energy(tmp.get_energy());
+    set_Attack_points(tmp.get_Attack_points());
+    set_Hit_points(tmp.get_Hit_points());
     std::cout <<"the assignment operator called"<<std::endl;
     return *this;
 }

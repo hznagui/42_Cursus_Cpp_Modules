@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 09:35:55 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/08 17:02:10 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/09 10:58:05 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ class ClapTrap
     unsigned int Attack_points;
     public:
     ClapTrap();
-    ClapTrap(std::string name);
-    ClapTrap(ClapTrap &obj);
-    ClapTrap &operator=( ClapTrap &obj);
+    ClapTrap(const std::string name);
+    ClapTrap(const ClapTrap &obj);
+    ClapTrap &operator=(const  ClapTrap &obj);
     ~ClapTrap();
     void attack(const std::string& target);
     void takeDamage(unsigned int amount);
