@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 09:35:52 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/10 10:57:44 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/10 15:15:07 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 ClapTrap::ClapTrap()
 {
     set_Name("hamid");
-    set_energy(50);
-    set_Attack_points(20);
-    set_Hit_points(100);
+    set_energy(10);
+    set_Attack_points(0);
+    set_Hit_points(10);
     std::cout <<"the default construtor ClapTrap called"<<std::endl;
 }
 ClapTrap::~ClapTrap()
@@ -81,12 +81,9 @@ void ClapTrap::beRepaired(unsigned int amount)
 {
     if ((get_energy() > 0))
     {
-        std::cout <<"ClapTrap " << get_Name() <<" repairing him self "<< amount <<" and get points of hit!"<<std::endl;
+        std::cout <<"ClapTrap " << get_Name() <<" repairing him self and get "<< amount <<" points of hit!"<<std::endl;
         set_energy(get_energy()-1);
-        if ((get_Hit_points() + amount)>10)
-            set_Hit_points(10);
-        else 
-            set_Hit_points (get_Hit_points()+amount);
+        set_Hit_points (get_Hit_points()+amount);
     }
     else 
     {
