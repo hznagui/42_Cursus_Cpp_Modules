@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 15:29:23 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/10 11:40:24 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/10 14:03:10 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,14 @@ ScavTrap::ScavTrap(const ScavTrap &obj) : ClapTrap(obj)
 ScavTrap &ScavTrap::operator=(const ScavTrap &obj)
 {
     ClapTrap::operator=(obj);
-    // ScavTrap tmp=obj;
-    // set_Name(tmp.get_Name());
-    // set_energy(tmp.get_energy());
-    // set_Attack_points(tmp.get_Attack_points());
-    // set_Hit_points(tmp.get_Hit_points());
     std::cout <<"the assignment operator ScavTrap called"<<std::endl;
     return *this;
 }
 
-
+void ScavTrap::guardGate()
+{
+    std::cout <<"the ScavTrap is now in Gate keeper mode."<<std::endl;
+}
 
 ScavTrap::~ScavTrap()
 {
