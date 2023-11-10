@@ -6,11 +6,11 @@
 #    By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 09:36:01 by hznagui           #+#    #+#              #
-#    Updated: 2023/11/09 11:14:28 by hznagui          ###   ########.fr        #
+#    Updated: 2023/11/10 17:00:48 by hznagui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ClapTrap
+NAME = ScavTrap
 
 FLAGS = -Wall -Wextra -Werror
 

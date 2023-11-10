@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 09:35:55 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/09 10:58:05 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/10 16:38:28 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,12 @@
 
 class ClapTrap
 {
+private:
     std::string Name;
     unsigned int Hit_points;
     unsigned int energy;
     unsigned int Attack_points;
-    public:
+public:
     ClapTrap();
     ClapTrap(const std::string name);
     ClapTrap(const ClapTrap &obj);

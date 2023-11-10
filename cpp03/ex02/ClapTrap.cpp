@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 09:35:52 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/10 15:15:07 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/10 17:28:47 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,10 @@ void ClapTrap::beRepaired(unsigned int amount)
     {
         std::cout <<"ClapTrap " << get_Name() <<" repairing him self and get "<< amount <<" points of hit!"<<std::endl;
         set_energy(get_energy()-1);
-        set_Hit_points (get_Hit_points()+amount);
+               if ((get_Hit_points() + amount)>100)
+            set_Hit_points(100);
+        else 
+            set_Hit_points (get_Hit_points()+amount);
     }
     else 
     {

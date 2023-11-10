@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 15:19:13 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/10 15:31:11 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/10 16:35:11 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class FragTrap:public ClapTrap
     FragTrap(const FragTrap&);
     FragTrap &operator=(const FragTrap&);
     ~FragTrap();
+    void highFivesGuys(void);
 };
 
 #endif
