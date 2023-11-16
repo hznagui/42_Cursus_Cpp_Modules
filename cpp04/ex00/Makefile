@@ -6,7 +6,7 @@
 #    By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/14 11:05:52 by hznagui           #+#    #+#              #
-#    Updated: 2023/11/16 12:25:53 by hznagui          ###   ########.fr        #
+#    Updated: 2023/11/16 13:38:32 by hznagui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,8 @@ FILE = 	Animal.cpp \
 		main.cpp\
 		Cat.cpp\
 		Dog.cpp\
+		WrongCat.cpp\
+		WrongAnimal.cpp\
 
 OBJ_FILE = $(FILE:.cpp=.o)
 
@@ -27,11 +29,11 @@ COLOUR_RED=\033[1;31m
 
 all : $(NAME)
 
-$(NAME) : $(OBJ_FILE) Cat.hpp Animal.hpp Dog.hpp
+$(NAME) : $(OBJ_FILE) Cat.hpp Animal.hpp Dog.hpp WrongAnimal.hpp
 	@c++ -std=c++98 $(FLAGS) $(FILE) -o $(NAME)
 	@echo "$(COLOUR_GREEN)--->[mandatory part successfully created ✅]<---"
 	
-%.o: %.cpp Cat.hpp Animal.hpp Dog.hpp
+%.o: %.cpp Cat.hpp Animal.hpp Dog.hpp WrongAnimal.hpp
 	@c++ -std=c++98 $(FLAGS) -c $< -o $@
 	
 clean :
