@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 11:05:36 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/14 12:47:30 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/16 12:34:32 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,17 @@ Animal::Animal(const Animal &a1)
 
 Animal &Animal::operator=(const Animal &obj)
 {
-    type=a1.type;
+    type=obj.type;
     std::cout <<"copy assignement operator Animal called"<<std::endl;
+    return *this;
 }
 
 Animal::~Animal()
 {
     std::cout <<"destractor Animal called"<<std::endl;
 }
-virtual void Animal::makeSound()const 
+void Animal::makeSound()const 
 {
     std::cout << "animal bleats" <<std::endl;
 }
-std::string Animal::get_type(){return type;}
+std::string Animal::getType()const {return type;}

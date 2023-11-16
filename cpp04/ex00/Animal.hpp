@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 11:05:38 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/14 12:47:05 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/16 12:34:26 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Animal
     Animal(const Animal&);
     Animal &operator=(const Animal&);
     ~Animal();
-    std::string get_type();
+    std::string getType()const ;
     virtual void makeSound() const;
 };
 

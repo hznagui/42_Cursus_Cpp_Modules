@@ -6,10 +6,13 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 11:05:49 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/16 12:24:40 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/16 12:34:45 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Animal.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
 int main()
 {
 const Animal* meta = new Animal();
@@ -20,6 +23,5 @@ std::cout << i->getType() << " " << std::endl;
 i->makeSound(); //will output the cat sound!
 j->makeSound();
 meta->makeSound();
-...
 return 0;
 }

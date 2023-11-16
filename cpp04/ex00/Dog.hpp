@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 11:05:47 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/16 12:24:14 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/16 12:28:37 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 class Dog : public Animal
 {
+    public:
     Dog();
     Dog(const Dog&);
     Dog &operator=(const Dog&);

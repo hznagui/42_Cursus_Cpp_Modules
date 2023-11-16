@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 11:05:40 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/16 12:21:48 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/16 12:35:00 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Cat::Cat()
     std::cout <<"default constructor Cat called"<<std::endl;
     type="Cat";
 }
-Cat::Cat(const Cat &obj):Animal(obj);
+Cat::Cat(const Cat &obj):Animal(obj)
 {
     std::cout <<"copy constructor Cat called"<<std::endl;
 }

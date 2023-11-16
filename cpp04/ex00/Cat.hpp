@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 11:05:43 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/14 12:49:03 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/16 12:28:45 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 class Cat : public Animal
 {
+    public:
     Cat();
     Cat(const Cat&);
     Cat &operator=(const Cat&);
