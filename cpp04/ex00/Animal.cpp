@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 11:05:36 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/14 11:27:04 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/14 12:47:30 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ Animal::~Animal()
 }
 virtual void Animal::makeSound()const 
 {
-    std::cout << " " <<std::endl;
+    std::cout << "animal bleats" <<std::endl;
 }
+std::string Animal::get_type(){return type;}

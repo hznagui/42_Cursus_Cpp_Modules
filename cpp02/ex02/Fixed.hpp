@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 16:13:55 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/05 14:25:29 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/15 17:58:06 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,7 @@ class Fixed
     static const Fixed &min(const Fixed&one ,const Fixed &two );
     static Fixed &min(Fixed &one ,Fixed &two);
     static const Fixed &max(const Fixed&one ,const Fixed &two );
-    static Fixed &max(Fixed &one ,Fixed &two);
-    
+    static Fixed &max(Fixed &one ,Fixed &two); 
 };
 std::ostream &operator<<(std::ostream& os,const Fixed &obj);
 bool operator< (const Fixed& one, const Fixed& two);
