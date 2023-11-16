@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 11:05:40 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/16 12:35:00 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/16 12:43:27 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,5 @@ Cat::~Cat()
 }
 void Cat::makeSound()const
 {
-    std::cout <<"meaw"<<std::endl;
+    std::cout <<"cat is meaws"<<std::endl;
 }

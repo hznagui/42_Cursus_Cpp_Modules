@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 11:05:45 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/16 12:35:08 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/16 12:41:05 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,5 @@ Dog::~Dog()
 }
 void Dog::makeSound()const
 {
-    std::cout <<"meaw"<<std::endl;
+    std::cout <<"Dog is barking"<<std::endl;
 }
