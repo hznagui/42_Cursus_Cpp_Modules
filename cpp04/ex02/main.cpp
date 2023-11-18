@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 11:05:49 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/18 13:42:38 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/18 13:44:04 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 // }
 int main()
 {
-    // atexit(test);
-const Animal* meta = new Animal();
+    // atexit(test); 
+const Animal* meta = new Cat();
 const Dog* j = new Dog();
 const WrongAnimal* i = new WrongCat();
 std::cout << j->getType() << " " << std::endl;
