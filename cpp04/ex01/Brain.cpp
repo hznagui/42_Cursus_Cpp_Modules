@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 10:49:02 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/18 11:01:38 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/18 13:07:29 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ Brain &Brain::operator=(const Brain &obj)
 {
     for (int i=0;i<100;i++)
         ideas[i]=obj.ideas[i];
-
     std::cout<<"copy assignement operator Brain called"<<std::endl;
+    return *this;
 }
+void Brain::set_idaes(const std::string & string,const int &i){ideas[i]=string;}
+std::string Brain::get_ideas(int i){return ideas[i];}

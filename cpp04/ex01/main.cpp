@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 11:05:49 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/16 13:54:58 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/18 13:18:39 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,15 @@
 #include "Dog.hpp"
 #include "WrongCat.hpp"
 
+// void test()
+// {
+//     system("leaks Animal");
+// }
 int main()
 {
+    // atexit(test);
 const Animal* meta = new Animal();
-const Animal* j = new Dog();
+const Dog* j = new Dog();
 const WrongAnimal* i = new WrongCat();
 std::cout << j->getType() << " " << std::endl;
 std::cout << i->getType() << " " << std::endl;
@@ -28,6 +33,5 @@ meta->makeSound();
 delete meta;
 delete j;
 delete i;
-
 return 0;
 }
