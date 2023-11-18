@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 12:47:28 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/16 13:53:17 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/16 14:12:02 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ class WrongAnimal
     WrongAnimal();
     WrongAnimal(const WrongAnimal&);
     WrongAnimal &operator=(const WrongAnimal&);
-     ~WrongAnimal();
+    ~WrongAnimal();
     std::string getType()const;
-     void makeSound() const;
+    void makeSound() const;
 };
 #endif
