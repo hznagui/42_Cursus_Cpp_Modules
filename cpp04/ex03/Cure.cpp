@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 11:28:13 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/20 13:15:48 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/20 16:15:16 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ Cure &Cure::operator=(const Cure &obj)
     
     std::cout << "Cure copy assignement called"<<std::endl;
     Type=obj.Type;
+    return *this;
 }
 Cure::~Cure()
 {

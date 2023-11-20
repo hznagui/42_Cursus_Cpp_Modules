@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 11:28:18 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/20 13:15:55 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/20 16:15:25 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ Ice &Ice::operator=(const Ice &obj)
     
     std::cout << "Ice copy assignement called"<<std::endl;
     Type=obj.Type;
+    return *this;
 }
 Ice::~Ice()
 {

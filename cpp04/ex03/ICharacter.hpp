@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 11:32:10 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/20 11:33:05 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/20 15:52:00 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 class ICharacter
 {
 public:
-virtual ~ICharacter() {}
+virtual ~ICharacter(){}
 virtual std::string const & getName() const = 0;
 virtual void equip(AMateria* m) = 0;
 virtual void unequip(int idx) = 0;
