@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 15:15:01 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/23 13:15:22 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/23 14:01:42 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,10 @@ void Character::equip(AMateria *m)
     for(int i=0;i<4;i++)
     {
         if (!inventory[i])
+        {
             inventory[i]=m;
+            return;
+        }
     }
 }
 
