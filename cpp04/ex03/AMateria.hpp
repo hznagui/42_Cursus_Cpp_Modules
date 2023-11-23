@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 10:02:59 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/20 11:12:12 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/23 12:47:09 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #define AMATERIA_HPP
 
 #include<iostream>
-
+#include "ICharacter.hpp"
+class ICharacter;
 class AMateria
 {
 protected:
@@ -23,7 +24,7 @@ public:
 AMateria(std::string const & type);//
 AMateria();//
 AMateria(const AMateria&);//
-virtuel ~AMateria();//
+virtual ~AMateria();//
 AMateria &operator=(const AMateria&);//
 std::string const & getType() const; //Returns the materia type
 virtual AMateria* clone() const = 0;

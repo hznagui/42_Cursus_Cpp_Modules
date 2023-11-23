@@ -6,14 +6,16 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 11:32:10 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/20 15:52:00 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/23 12:45:12 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_HPP
 #define ICHARACTER_HPP
 
-#include <iostrem>
+#include <iostream>
+#include "AMateria.hpp"
+class AMateria;
 class ICharacter
 {
 public:

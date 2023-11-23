@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 15:15:01 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/20 16:27:11 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/23 13:15:22 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,16 @@
 Character::Character()
 {
     Name="hamid";
+        for (int i=0; i<4 ; i++)
+                inventory[i]=NULL;
 }
-Character::Character(std::string name){Name=name;}
+   
+Character::Character(std::string name)
+{
+    Name=name;
+    for (int i=0; i<4 ; i++)
+        inventory[i]=NULL;
+}
 Character::Character(const Character &obj)
 {
     Name=obj.getName();
@@ -43,8 +51,50 @@ Character &Character::operator=(const Character&obj)
             {
                 if (inventory[i])
                     delete inventory[i];
-                inventory[i]=obj.inventory[i]->clone();
+                inventory[i] = obj.inventory[i]->clone();
             }
         }
+        return *this;
 }
-std::string const &Character::getName(){return Name;}
+std::string const &Character::getName()const {return Name;}
+
+void Character::equip(AMateria *m)
+{
+    for(int i=0;i<4;i++)
+    {
+        if (inventory[i]==m)
+            return;
+    }
+    
+    for(int i=0;i<4;i++)
+    {
+        if (!inventory[i])
+            inventory[i]=m;
+    }
+}
+
+void Character::unequip(int idx)
+{
+    if (idx >= 4 || idx < 0 || !inventory[idx])
+        return ;
+    tmp[idx]=inventory[idx];
+    inventory[idx]=NULL;
+}
+void Character::use(int idx,ICharacter &target)
+{
+        if (idx >= 4 || idx < 0 || !inventory[idx])
+        {
+            std::cout <<"there is nothing to do use"<<std::endl;
+            return ;
+        }
+    inventory[idx]->use(target);       
+}
+Character::~Character()
+{
+    std::cout << "Character destructor called"<<std::endl;
+    for (int i=0; i<4 ; i++)
+    {       
+        if(inventory[i])
+            delete inventory[i];
+    }
+}

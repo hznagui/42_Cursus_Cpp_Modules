@@ -6,20 +6,19 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 11:28:13 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/20 16:15:16 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/23 13:06:49 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 
-Cure::Cure()
+Cure::Cure():AMateria()
 {
     Type="cure";
     std::cout << "Cure constructor called"<<std::endl;
 }
-Cure::Cure(const Cure &obj)
+Cure::Cure(const Cure &obj):AMateria(obj)
 {
-    Type=obj.Type;
     std::cout << "Cure copy constructor called"<<std::endl;
 }
 Cure &Cure::operator=(const Cure &obj)
@@ -33,7 +32,7 @@ Cure::~Cure()
 {
     std::cout << "Cure destructor called"<<std::endl;
 }
-AMateria *Cure::clone()
+AMateria *Cure::clone() const 
 {
     AMateria*tmp=new(std::nothrow)Cure();
     if (!tmp)

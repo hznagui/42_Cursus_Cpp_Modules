@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 11:28:21 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/20 12:48:03 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/23 12:56:20 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Ice : public AMateria
     Ice(const Ice&);
     Ice &operator=(const Ice&);
     ~Ice();
-    AMateria *clone();
+    AMateria *clone() const;
     void use(ICharacter &);
 };
 

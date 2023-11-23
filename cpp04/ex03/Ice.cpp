@@ -6,20 +6,19 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 11:28:18 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/20 16:15:25 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/23 13:06:16 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 
-Ice::Ice()
+Ice::Ice():AMateria()
 {
     Type="ice";
     std::cout << "Ice constructor called"<<std::endl;
 }
-Ice::Ice(const Ice &obj)
+Ice::Ice(const Ice &obj):AMateria(obj)
 {
-    Type=obj.Type;
     std::cout << "Ice copy constructor called"<<std::endl;
 }
 Ice &Ice::operator=(const Ice &obj)
@@ -33,7 +32,7 @@ Ice::~Ice()
 {
     std::cout << "Ice destructor called"<<std::endl;
 }
-AMateria *Ice::clone()
+AMateria *Ice::clone() const 
 {
     AMateria*tmp=new(std::nothrow)Ice();
     if (!tmp)
