@@ -6,36 +6,35 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 10:03:03 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/23 15:39:14 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/23 21:16:29 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 #include "Cure.hpp"
 #include "Ice.hpp"
+#include "MateriaSource.hpp"
 void test()
 {
     system("leaks Character");
 }
 int main ()
 {
-    // atexit(test);
-    Character a=Character("houdayfa"),b=Character();
-    Ice *ice=new Ice();
-    Ice *ice2=new Ice();
-    Ice *ice3=new Ice();
-    Cure *cure=new Cure();
-    a.equip(ice);
-    a.equip(cure);
-    a.equip(ice2);
-    a.equip(ice3);
-    a.unequip(0);
-    b=a;
-    a.use(0,a);
-    a.use(1,a);
-    a.use(2,a);
-    a.use(3,a);
-    a.use(4,a);
-    
-    
+    atexit(test);
+IMateriaSource* src = new MateriaSource();
+src->learnMateria(new Ice());
+src->learnMateria(new Cure());
+ICharacter* me = new Character("me");
+AMateria* tmp;
+tmp = src->createMateria("ice");
+me->equip(tmp);
+tmp = src->createMateria("cure");
+me->equip(tmp);
+ICharacter* bob = new Character("bob");
+me->use(0, *bob);
+me->use(1, *bob);
+delete bob;
+delete me;
+delete src;
+return 0;
 }
