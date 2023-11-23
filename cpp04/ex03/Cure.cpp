@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 11:28:13 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/23 13:06:49 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/23 15:40:21 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,22 @@
 Cure::Cure():AMateria()
 {
     Type="cure";
-    std::cout << "Cure constructor called"<<std::endl;
+    // std::cout << "Cure constructor called"<<std::endl;
 }
 Cure::Cure(const Cure &obj):AMateria(obj)
 {
-    std::cout << "Cure copy constructor called"<<std::endl;
+    // std::cout << "Cure copy constructor called"<<std::endl;
 }
 Cure &Cure::operator=(const Cure &obj)
 {
     
-    std::cout << "Cure copy assignement called"<<std::endl;
+    // std::cout << "Cure copy assignement called"<<std::endl;
     Type=obj.Type;
     return *this;
 }
 Cure::~Cure()
 {
-    std::cout << "Cure destructor called"<<std::endl;
+    // std::cout << "Cure destructor called"<<std::endl;
 }
 AMateria *Cure::clone() const 
 {
@@ -44,5 +44,5 @@ AMateria *Cure::clone() const
 }
 void Cure::use(ICharacter &target)
 {
-    std::cout << "* shoots an Cure bolt at "<<target.getName()<<" *";
+    std::cout << "* shoots an Cure bolt at "<<target.getName()<<" *"<<std::endl;
 }
