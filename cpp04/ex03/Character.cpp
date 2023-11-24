@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 15:15:01 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/23 21:16:01 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/24 09:49:15 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,10 @@ std::string const &Character::getName()const {return Name;}
 
 void Character::equip(AMateria *m)
 {
+    
     for(int i=0;i<4;i++)
     {
-        if (inventory[i]==m)
+        if (inventory[i]==m) 
             return;
     }
     

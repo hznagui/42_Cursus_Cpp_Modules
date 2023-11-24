@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 10:03:03 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/23 21:16:29 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/24 09:52:10 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void test()
 }
 int main ()
 {
-    atexit(test);
+    // atexit(test);
 IMateriaSource* src = new MateriaSource();
 src->learnMateria(new Ice());
 src->learnMateria(new Cure());

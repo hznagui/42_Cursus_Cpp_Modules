@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 16:50:08 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/23 21:14:53 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/24 09:37:14 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,26 +29,28 @@ MateriaSource::MateriaSource(const  MateriaSource &obj)
 }
 MateriaSource &MateriaSource::operator=(const  MateriaSource &obj)
 {
-        for (int i=0; i<4 ; i++)
+    for (int i=0; i<4 ; i++)
+    {
+        if (!obj.inventory[i])
         {
-            if (!obj.inventory[i])
-                {
-                if (inventory[i])
-                    delete inventory[i];    
-                inventory[i]=NULL;
-                }
-            else
-            {
-                if (inventory[i])
-                    delete inventory[i];
-                inventory[i] = obj.inventory[i]->clone();
-            }
+            if (inventory[i])
+                delete inventory[i];    
+            inventory[i]=NULL;
         }
-        return *this;
+        else
+        {
+            if (inventory[i])
+                delete inventory[i];
+            inventory[i] = obj.inventory[i]->clone();
+        }
+    }
+    return *this;
 }
 void MateriaSource::learnMateria(AMateria *obj)
 {
     static int i;
+    if (obj==NULL)
+        return;
     if (i>=4)
     {
         delete obj;
@@ -61,6 +63,8 @@ AMateria* MateriaSource::createMateria(std::string const & type)
 {
     for (int i=0;i<4;i++)
     {
+        if (!inventory[i])
+            return NULL;
         if (type == inventory[i]->getType())
             return inventory[i]->clone();
     }
