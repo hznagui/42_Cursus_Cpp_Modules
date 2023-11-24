@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 15:14:58 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/23 12:55:37 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/24 20:45:36 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,13 @@
 #include <iostream>
 #include "ICharacter.hpp"
 #include "AMateria.hpp"
+#include "Tmp.hpp"
 class Character : public ICharacter
 {
     std::string Name;
     AMateria *inventory[4];
-    AMateria *tmp[4];
+    Tmp *header;
+    Tmp *tmp;
     public:
     Character();//
     Character(const Character &);//

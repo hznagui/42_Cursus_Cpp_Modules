@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 15:15:01 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/24 12:01:33 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/24 21:16:46 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@ Character::Character()
     Name="hamid";
         for (int i=0; i<4 ; i++){
                 inventory[i]=NULL;
-                tmp[i] = NULL;
         }
+                header= NULL;
+                tmp= NULL;
 }
    
 Character::Character(std::string name)
@@ -27,21 +28,24 @@ Character::Character(std::string name)
     for (int i=0; i<4 ; i++)
     {
         inventory[i]=NULL;
-        tmp[i]=NULL;
 
     }
+   header= NULL;
+   tmp= NULL;
 }
 Character::Character(const Character &obj)
 {
     Name=obj.getName();
+    tmp=NULL;
+    header= NULL;
+    
     for (int i=0; i<4 ; i++)
-        {
-            tmp[i]=NULL;
-            if (!obj.inventory[i])
-                inventory[i]=NULL;
-            else
-                inventory[i]=obj.inventory[i]->clone();
-        }
+    {
+        if (!obj.inventory[i])
+            inventory[i]=NULL;
+        else
+            inventory[i]=obj.inventory[i]->clone();
+    }
 }
 Character &Character::operator=(const Character&obj)
 {
@@ -53,20 +57,22 @@ Character &Character::operator=(const Character&obj)
                 if (inventory[i])
                     delete inventory[i];    
                 inventory[i]=NULL;
-                if (tmp[i])
-                    delete tmp[i];    
-                tmp[i]=NULL;
                 }
             else
             {
                 if (inventory[i])
                     delete inventory[i];
                 inventory[i] = obj.inventory[i]->clone();
-                if (tmp[i])
-                    delete tmp[i];    
-                tmp[i]=NULL;
             }
         }
+        tmp = header;
+       while (tmp)
+       {
+        tmp=tmp->get_next();
+        delete header;
+        header=tmp;
+       }
+        
         return *this;
 }
 std::string const &Character::getName()const {return Name;}
@@ -94,9 +100,27 @@ void Character::unequip(int idx)
 {
     if (idx >= 4 || idx < 0 || !inventory[idx])
         return ;
-    if (tmp[idx])
-        delete tmp[idx]; 
-    tmp[idx]=inventory[idx];
+    tmp = header;
+    if (tmp)
+    {
+    while (tmp->get_next())
+        tmp=tmp->get_next();
+    tmp->set_next(new(std::nothrow)Tmp(inventory[idx]));
+    if (!tmp->get_next())
+        {
+            std::cout<<"malloc error "<<std::endl;
+            return ;
+        }
+    }
+    else 
+    {
+        header=new(std::nothrow)Tmp(inventory[idx]);
+        if (!header)
+        {
+            std::cout<<"malloc error "<<std::endl;
+            return ;
+        }
+    }
     inventory[idx]=NULL;
 }
 void Character::use(int idx,ICharacter &target)
@@ -115,7 +139,12 @@ Character::~Character()
     {       
         if(inventory[i])
             delete inventory[i];
-        if (tmp[i])
-            delete tmp[i];
+    }
+    tmp = header;
+    while (tmp)
+    {
+        tmp=tmp->get_next();
+        delete header;
+        header=tmp;
     }
 }

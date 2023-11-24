@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 10:03:03 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/24 12:01:57 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/24 21:19:53 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ void test()
 {
     system("leaks Character");
 }
-int main ()
+
+int main()
 {
     // atexit(test);
 IMateriaSource* src = new MateriaSource();

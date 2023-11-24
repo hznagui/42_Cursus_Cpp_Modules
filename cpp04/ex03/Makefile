@@ -6,7 +6,7 @@
 #    By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/20 10:03:06 by hznagui           #+#    #+#              #
-#    Updated: 2023/11/24 09:38:15 by hznagui          ###   ########.fr        #
+#    Updated: 2023/11/24 21:17:11 by hznagui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ FILE = 	AMateria.cpp \
 		Cure.cpp\
 		Ice.cpp\
 		Character.cpp\
-		MateriaSource.cpp
+		MateriaSource.cpp\
+		Tmp.cpp\
 
 OBJ_FILE = $(FILE:.cpp=.o)
 
@@ -29,12 +30,12 @@ COLOUR_RED=\033[1;31m
 
 all : $(NAME)
 
-$(NAME) : $(OBJ_FILE) Cure.hpp AMateria.hpp ICharacter.hpp Ice.hpp Character.hpp MateriaSource.hpp
+$(NAME) : $(OBJ_FILE) Cure.hpp AMateria.hpp ICharacter.hpp Ice.hpp Character.hpp MateriaSource.hpp Tmp.hpp
 
 	@c++ -std=c++98 $(FLAGS) $(FILE) -o $(NAME)
 	@echo "$(COLOUR_GREEN)--->[mandatory part successfully created ✅]<---"
 	
-%.o: %.cpp Cure.hpp AMateria.hpp ICharacter.hpp Ice.hpp Character.hpp MateriaSource.hpp
+%.o: %.cpp Cure.hpp AMateria.hpp ICharacter.hpp Ice.hpp Character.hpp MateriaSource.hpp Tmp.hpp
 	@c++ -std=c++98 $(FLAGS) -c $< -o $@
 	
 clean :
