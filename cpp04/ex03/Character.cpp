@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 15:15:01 by hznagui           #+#    #+#             */
-/*   Updated: 2023/11/24 09:49:15 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/11/24 12:01:33 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,8 @@ void Character::unequip(int idx)
 {
     if (idx >= 4 || idx < 0 || !inventory[idx])
         return ;
+    if (tmp[idx])
+        delete tmp[idx]; 
     tmp[idx]=inventory[idx];
     inventory[idx]=NULL;
 }
