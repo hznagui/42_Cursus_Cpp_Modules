@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 18:10:04 by hznagui           #+#    #+#             */
-/*   Updated: 2023/12/14 16:45:16 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/12/14 17:00:58 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int main()
         std::cout << b <<std::endl;
         b.decrement();
         b.decrement();
+        
     }
     catch (std::exception &e)
     {
