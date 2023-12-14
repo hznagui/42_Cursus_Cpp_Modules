@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 18:09:59 by hznagui           #+#    #+#             */
-/*   Updated: 2023/12/14 15:22:22 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/12/14 16:57:13 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,22 @@ class Bureaucrat
     public:
     class GradeTooHighException : public std::exception
     {
-        virtual const char* what() const throw();//
+        virtual const char* what() const throw();
     };    
     class GradeTooLowException : public std::exception
     {
-        virtual const char* what() const throw();//
+        virtual const char* what() const throw();
     };
 
-        Bureaucrat();//
-        Bureaucrat(const std::string &, const int &);//
-        Bureaucrat(const Bureaucrat &);//
-        Bureaucrat &operator=(const Bureaucrat &);//
-        ~Bureaucrat();//
-        std::string getName() const ;//
-        int getGrade() const ;//
-        void increment();//
-        void decrement();//
+        Bureaucrat();
+        Bureaucrat(const std::string &, const int &);
+        Bureaucrat(const Bureaucrat &);
+        Bureaucrat &operator=(const Bureaucrat &);
+        ~Bureaucrat();
+        std::string getName() const ;
+        int getGrade() const ;
+        void increment();
+        void decrement();
 };
-    std::ostream &operator<<(std::ostream &, const Bureaucrat &);//
+    std::ostream &operator<<(std::ostream &, const Bureaucrat &);
 #endif
