@@ -6,20 +6,18 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 18:09:56 by hznagui           #+#    #+#             */
-/*   Updated: 2023/12/14 11:48:15 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/12/14 16:42:06 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat()
+Bureaucrat::Bureaucrat():Name("khalid")
 {
-    Name = "khalid";
     Grade = 17;
 }
-Bureaucrat::Bureaucrat(const std::string &name, const int &grade)
+Bureaucrat::Bureaucrat(const std::string &name, const int &grade):Name(name)
 {
-    Name=name;
     if (grade > 150)
         throw GradeTooLowException();
     else if (grade < 1)
@@ -28,21 +26,45 @@ Bureaucrat::Bureaucrat(const std::string &name, const int &grade)
         Grade = grade;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &obj)
+Bureaucrat::Bureaucrat(const Bureaucrat &obj): Name(obj.Name)
 {
-    Name=obj.Name;
     Grade= obj.Grade;
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &obj)
 {
-    Name=obj.Name;
-    Grade= obj.Grade;
+    
+    Grade= obj.getGrade();
+    return *this;
 }
 Bureaucrat::~Bureaucrat()
 {
     
 }
 
-std::string Bureaucrat::getName(){return Name;}
-int Bureaucrat::getGrade(){return Grade;}
+std::string Bureaucrat::getName()const {return Name;}
+int Bureaucrat::getGrade()const {return Grade;}
+
+void Bureaucrat::increment()
+{
+    if (Grade == 1)
+        throw GradeTooHighException();
+    else
+        Grade--;
+}
+void Bureaucrat::decrement()
+{
+    if (Grade == 150)
+        throw GradeTooLowException();
+    else
+        Grade++;
+}
+
+std::ostream &operator<<(std::ostream &os, const Bureaucrat &obj)
+{
+    os << obj.getName()<<", bureaucrat grade "<< obj.getGrade();
+    return os;
+}
+
+const char * Bureaucrat::GradeTooHighException::what()const throw() {return "Grade Too High Exception";}
+const char * Bureaucrat::GradeTooLowException::what()const throw() {return "Grade Too Low Exception";}
