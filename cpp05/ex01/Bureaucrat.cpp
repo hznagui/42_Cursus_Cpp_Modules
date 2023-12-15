@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 18:09:56 by hznagui           #+#    #+#             */
-/*   Updated: 2023/12/14 17:01:09 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/12/15 17:32:23 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,3 +68,16 @@ std::ostream &operator<<(std::ostream &os, const Bureaucrat &obj)
 
 const char * Bureaucrat::GradeTooHighException::what()const throw() {return "Grade Too High Exception";}
 const char * Bureaucrat::GradeTooLowException::what()const throw() {return "Grade Too Low Exception";}
+
+void Bureaucrat::signForm(Form & form)
+{
+    try 
+    {
+        form.beSigned(*this);
+        std::cout << Name << " signed " << form.getName() << std::endl; 
+    }
+    catch (std::exception &a)
+    {
+        std::cout << Name << " couldn’t sign "<< form.getName() << " because "<<a.what()<< std::endl;
+    }
+}

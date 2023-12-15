@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 18:09:59 by hznagui           #+#    #+#             */
-/*   Updated: 2023/12/14 17:01:02 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/12/15 17:33:05 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #define BUREAUCRAT_HPP
 
 #include <iostream>
-
+#include "Form.hpp"
+class Form;
 class Bureaucrat 
 {
         const std::string Name;
@@ -28,7 +29,6 @@ class Bureaucrat
     {
         virtual const char* what() const throw();
     };
-
         Bureaucrat();
         Bureaucrat(const std::string &, const int &);
         Bureaucrat(const Bureaucrat &);
@@ -38,6 +38,7 @@ class Bureaucrat
         int getGrade() const ;
         void increment();
         void decrement();
+        void signForm(Form &);
 };
     std::ostream &operator<<(std::ostream &, const Bureaucrat &);
 #endif

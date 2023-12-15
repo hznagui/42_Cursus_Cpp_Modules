@@ -6,16 +6,17 @@
 #    By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/13 18:10:06 by hznagui           #+#    #+#              #
-#    Updated: 2023/12/14 15:11:12 by hznagui          ###   ########.fr        #
+#    Updated: 2023/12/15 17:35:59 by hznagui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = bureaucrat
+NAME = form
 
 FLAGS = -Wall -Wextra -Werror #-fsanitize=address -g
 
 FILE = 	Bureaucrat.cpp \
 		main.cpp\
+		Form.cpp\
 
 OBJ_FILE = $(FILE:.cpp=.o)
 
@@ -25,12 +26,12 @@ COLOUR_RED=\033[1;31m
 
 all : $(NAME)
 
-$(NAME) : $(OBJ_FILE) Bureaucrat.hpp
+$(NAME) : $(OBJ_FILE) Bureaucrat.hpp Form.hpp
 
 	@c++ -std=c++98 $(FLAGS) $(FILE) -o $(NAME)
 	@echo "$(COLOUR_GREEN)--->[mandatory part successfully created ✅]<---"
 	
-%.o: %.cpp Bureaucrat.hpp
+%.o: %.cpp Bureaucrat.hpp Form.hpp
 	@c++ -std=c++98 $(FLAGS) -c $< -o $@
 	
 clean :
