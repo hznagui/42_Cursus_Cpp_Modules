@@ -1,0 +1,52 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/14 18:15:18 by hznagui           #+#    #+#             */
+/*   Updated: 2023/12/16 17:05:26 by hznagui          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef AFORM_HPP
+#define AFORM_HPP
+
+#include <iostream>
+#include "Bureaucrat.hpp"
+class Bureaucrat;
+class AForm 
+{
+    const std::string Name;
+    bool sign;
+    const int grade_exce , grade_sign;
+public:
+    AForm();//
+    AForm(std::string,int sign, int exce);//
+    AForm(const AForm &);//
+    AForm &operator=(const AForm &);//
+    ~AForm();//
+    std::string getName();//
+    bool getSigned();//
+    int getGradeToExce();//
+    int getGradeToSign();//
+    void beSigned(Bureaucrat &);//
+    virtual void execute(Bureaucrat const & executor) = 0;//
+    class GradeTooHighException : public std::exception//
+    {
+        virtual const char* what() const throw();
+    };    
+    class GradeTooLowException : public std::exception//
+    {
+        virtual const char* what() const throw();
+    };
+    class AlreadySigned : public std::exception
+    {
+        virtual const char* what() const throw();
+    };
+};
+
+std::ostream &operator<<(std::ostream &, AForm &);
+
+#endif
