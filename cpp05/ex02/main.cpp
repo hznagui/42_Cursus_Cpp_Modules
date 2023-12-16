@@ -6,20 +6,21 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 18:10:04 by hznagui           #+#    #+#             */
-/*   Updated: 2023/12/15 17:40:25 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/12/16 23:03:00 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main()
 {
     try 
     {
         Bureaucrat a("houdayfa",4),b("ana",150);
-        Form t("retire",30,70);
+        ShrubberyCreationForm t("retire");
         a.signForm(t);
-        b.signForm(t);
+        a.executeForm(t);
     }
     catch (std::exception &e)
     {

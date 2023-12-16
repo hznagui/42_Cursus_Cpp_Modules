@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 18:15:18 by hznagui           #+#    #+#             */
-/*   Updated: 2023/12/16 17:05:26 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/12/16 22:23:46 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ public:
     AForm(const AForm &);//
     AForm &operator=(const AForm &);//
     ~AForm();//
-    std::string getName();//
-    bool getSigned();//
-    int getGradeToExce();//
-    int getGradeToSign();//
+    std::string getName() const ;//
+    bool getSigned()const;//
+    int getGradeToExce()const;//
+    int getGradeToSign()const;//
     void beSigned(Bureaucrat &);//
-    virtual void execute(Bureaucrat const & executor) = 0;//
+    virtual  void execute(Bureaucrat const & executor) const = 0;//
     class GradeTooHighException : public std::exception//
     {
         virtual const char* what() const throw();
@@ -42,6 +42,10 @@ public:
         virtual const char* what() const throw();
     };
     class AlreadySigned : public std::exception
+    {
+        virtual const char* what() const throw();
+    };
+    class NotSigned : public std::exception
     {
         virtual const char* what() const throw();
     };

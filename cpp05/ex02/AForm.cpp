@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 18:15:15 by hznagui           #+#    #+#             */
-/*   Updated: 2023/12/16 17:06:43 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/12/16 22:24:12 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,12 @@ AForm &AForm::operator=(const AForm &obj)
 }
 AForm::~AForm(){}
 
-std::string AForm::getName(){return Name;}
+std::string AForm::getName()const {return Name;}
 
-bool AForm::getSigned(){return sign;}
+bool AForm::getSigned()const{return sign;}
 
-int AForm::getGradeToExce(){return grade_exce;}
-int AForm::getGradeToSign(){return grade_sign;}
+int AForm::getGradeToExce()const {return grade_exce;}
+int AForm::getGradeToSign()const {return grade_sign;}
 
 void AForm::beSigned(Bureaucrat &obj)
 {
@@ -62,4 +62,5 @@ std::ostream &operator<<(std::ostream &os, AForm &obj)
 } 
 const char * AForm::GradeTooHighException::what()const throw() {return "Grade Too High Exception";}
 const char * AForm::GradeTooLowException::what()const throw() {return "Grade Too Low Exception";}
-const char * AForm::AlreadySigned::what()const throw() {return "AForm already signed";}
+const char * AForm::AlreadySigned::what()const throw() {return "Form already signed";}
+const char * AForm::NotSigned::what()const throw() {return "Form not signed";}

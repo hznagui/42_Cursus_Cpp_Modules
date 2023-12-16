@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 18:15:18 by hznagui           #+#    #+#             */
-/*   Updated: 2023/12/15 17:31:49 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/12/16 21:11:15 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define FORM_HPP
 
 #include <iostream>
+#include <fstream>
 #include "Bureaucrat.hpp"
 class Bureaucrat;
 class Form 

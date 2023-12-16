@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 16:56:17 by hznagui           #+#    #+#             */
-/*   Updated: 2023/12/16 17:21:22 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/12/16 22:55:23 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,20 @@
 
 #include <iostream>
 #include "AForm.hpp"
-class ShrubberyRequestForm : public AForm
+#include <fstream>
+class ShrubberyCreationForm : public AForm
 {
-    std::string target;
+    std::string Target;
     public:
-        ShrubberyRequestForm();
-        ShrubberyRequestForm(std::string);
-        ShrubberyRequestForm(const ShrubberyRequestForm &);
-        ShrubberyRequestForm &operator=(const ShrubberyRequestForm&);
-        ~ShrubberyRequestForm();
-        void execute(Bureaucrat const & executor);
+        ShrubberyCreationForm();//
+        ShrubberyCreationForm(std::string);//
+        ShrubberyCreationForm(const ShrubberyCreationForm &);//
+        ShrubberyCreationForm &operator=(const ShrubberyCreationForm&);//
+        ~ShrubberyCreationForm();//
+        void  execute(Bureaucrat const & executor) const;
+    class FileProblem : public std::exception//
+    {
+        virtual const char* what() const throw();
+    }; 
 };
 #endif
