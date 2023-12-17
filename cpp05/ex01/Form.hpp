@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 18:15:18 by hznagui           #+#    #+#             */
-/*   Updated: 2023/12/16 21:11:15 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/12/17 15:04:47 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,21 +23,21 @@ class Form
     bool sign;
     const int grade_exce , grade_sign;
 public:
-    Form();//
-    Form(std::string,int sign, int exce);//
-    Form(const Form &);//
-    Form &operator=(const Form &);//
-    ~Form();//
-    std::string getName();//
-    bool getSigned();//
-    int getGradeToExce();//
-    int getGradeToSign();//
-    void beSigned(Bureaucrat &);//
-    class GradeTooHighException : public std::exception//
+    Form();
+    Form(std::string,int sign, int exce);
+    Form(const Form &);
+    Form &operator=(const Form &);
+    ~Form();
+    std::string getName();
+    bool getSigned();
+    int getGradeToExce();
+    int getGradeToSign();
+    void beSigned(Bureaucrat &);
+    class GradeTooHighException : public std::exception
     {
         virtual const char* what() const throw();
     };    
-    class GradeTooLowException : public std::exception//
+    class GradeTooLowException : public std::exception
     {
         virtual const char* what() const throw();
     };

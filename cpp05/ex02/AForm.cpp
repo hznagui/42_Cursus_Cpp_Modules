@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 18:15:15 by hznagui           #+#    #+#             */
-/*   Updated: 2023/12/16 22:24:12 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/12/17 15:07:12 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ AForm::AForm() : Name("retirement") ,grade_exce(90), grade_sign(80)
 {
     sign = false;
 }
-AForm::AForm(std::string name,int sign,int exce) : Name(name) ,grade_exce(exce) , grade_sign(sign)
+AForm::AForm(std::string name,int signe,int exce) : Name(name) ,grade_exce(exce) , grade_sign(signe)
 {
     sign = false;
     

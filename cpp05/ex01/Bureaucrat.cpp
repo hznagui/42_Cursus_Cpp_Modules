@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 18:09:56 by hznagui           #+#    #+#             */
-/*   Updated: 2023/12/16 19:40:07 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/12/17 15:07:33 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Bureaucrat::Bureaucrat():Name("khalid")
 {
     Grade = 17;
 }
-Bureaucrat::Bureaucrat(const std::string &name, const int &grade):Name(name)
+Bureaucrat::Bureaucrat(const std::string &name, const int &grade) : Name(name)
 {
     if (grade > 150)
         throw GradeTooLowException();
