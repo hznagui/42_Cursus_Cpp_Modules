@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
+/*   By: houdayfa <houdayfa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 16:56:12 by hznagui           #+#    #+#             */
-/*   Updated: 2023/12/17 14:39:00 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/12/17 22:28:21 by houdayfa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define ROBOTOMYREQUESTFORM_HPP
 
 #include <iostream>
+#include <time.h>
+#include <cstdlib> 
 #include "AForm.hpp"
 class RobotomyRequestForm : public AForm
 {
@@ -24,7 +26,7 @@ class RobotomyRequestForm : public AForm
         RobotomyRequestForm(const RobotomyRequestForm &);//
         RobotomyRequestForm &operator=(const RobotomyRequestForm &);//
         ~RobotomyRequestForm();//
-        void execute(Bureaucrat const & executor);
+        void execute(Bureaucrat const & executor) const;
     class RobotomyFailed : public std::exception 
     {
         virtual const char* what() const throw();      

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
+/*   By: houdayfa <houdayfa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 16:56:10 by hznagui           #+#    #+#             */
-/*   Updated: 2023/12/17 14:40:27 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/12/17 22:28:07 by houdayfa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &o
 RobotomyRequestForm::~RobotomyRequestForm() 
 {
 }
-void execute(Bureaucrat const & executor)
+void RobotomyRequestForm::execute(Bureaucrat const & executor) const 
 {
     if (!getSigned())
         throw NotSigned();
@@ -42,7 +42,11 @@ void execute(Bureaucrat const & executor)
         throw GradeTooLowException();
     else 
     {
-        
+        srand(time(NULL));
+        if (rand() % 2)
+            std::cout << Target <<" has been robotomized"<< std::endl;
+        else 
+            throw RobotomyFailed();
     }
 }
-const char * ShrubberyCreationForm::RobotomyFailed::what()const throw() {return "robotomy failed";}
+const char * RobotomyRequestForm::RobotomyFailed::what()const throw() {return "robotomy failed";}

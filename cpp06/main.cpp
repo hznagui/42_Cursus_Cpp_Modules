@@ -3,15 +3,16 @@
 // in a range of 0 to N-1 
 #include <cstdlib> 
 #include <iostream> 
-using namespace std; 
+#include <time.h>
 
 int main() 
 { 
-	int N = 100; 
+	int N = 100;
+	std::srand(time(NULL));
 	// This program will create some sequence of random 
 	// numbers on every program run within range 0 to N-1 
 	for (int i = 0; i < 5; i++) 
-		cout << rand() % N << " "; 
+		std::cout << std::rand() % N << " "; 
 
 	return 0; 
 } 
