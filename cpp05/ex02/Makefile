@@ -6,7 +6,7 @@
 #    By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/13 18:10:06 by hznagui           #+#    #+#              #
-#    Updated: 2023/12/16 21:50:08 by hznagui          ###   ########.fr        #
+#    Updated: 2023/12/17 13:27:58 by hznagui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,7 @@ clean :
 
 fclean: clean
 	@rm -f $(NAME)
+	@rm -f *_shrubbery
 	@echo "$(COLOUR_RED)--->[program deleted successfully ✅]<---"
 
 
