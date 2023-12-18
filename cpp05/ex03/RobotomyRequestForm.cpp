@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houdayfa <houdayfa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 16:56:10 by hznagui           #+#    #+#             */
-/*   Updated: 2023/12/17 22:28:07 by houdayfa         ###   ########.fr       */
+/*   Updated: 2023/12/18 15:04:45 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm() : AForm("Robotomy Request Form",72,45)
+RobotomyRequestForm::RobotomyRequestForm() : AForm("robotomy request",72,45)
 {
     Target = "home";
 }
-RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("Robotomy Request Form",72,45)
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("robotomy request",72,45)
 {
     Target = target;
 }

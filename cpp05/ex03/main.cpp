@@ -3,31 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houdayfa <houdayfa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 18:10:04 by hznagui           #+#    #+#             */
-/*   Updated: 2023/12/17 22:40:01 by houdayfa         ###   ########.fr       */
+/*   Updated: 2023/12/18 15:58:23 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
+
 int main()
 {
     try 
     {
         Bureaucrat a("houdayfa",4),b("ana",150);
-        ShrubberyCreationForm t("retire");
-        RobotomyRequestForm k("habibi");
-        PresidentialPardonForm z("hamid");
-        a.signForm(t);
-        a.signForm(k);
-        a.signForm(z);
-        a.executeForm(z);
-        a.executeForm(t);
-        a.executeForm(k);
+        Intern player;
+        AForm *rrf;
+        rrf=player.makeForm("shrubbery request","Bender");
+        a.signForm(*rrf);
+        a.executeForm(*rrf);
     }
     catch (std::exception &e)
     {

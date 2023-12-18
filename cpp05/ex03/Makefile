@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: houdayfa <houdayfa@student.42.fr>          +#+  +:+       +#+         #
+#    By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/13 18:10:06 by hznagui           #+#    #+#              #
-#    Updated: 2023/12/17 22:38:17 by houdayfa         ###   ########.fr        #
+#    Updated: 2023/12/18 15:57:03 by hznagui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ FILE = 	Bureaucrat.cpp \
 		ShrubberyCreationForm.cpp\
 		RobotomyRequestForm.cpp\
 		PresidentialPardonForm.cpp\
+		Intern.cpp\
 
 OBJ_FILE = $(FILE:.cpp=.o)
 
@@ -29,12 +30,12 @@ COLOUR_RED=\033[1;31m
 
 all : $(NAME)
 
-$(NAME) : $(OBJ_FILE) Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp
+$(NAME) : $(OBJ_FILE) Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp Intern.hpp
 
 	@c++ -std=c++98 $(FLAGS) $(FILE) -o $(NAME)
 	@echo "$(COLOUR_GREEN)--->[mandatory part successfully created ✅]<---"
 	
-%.o: %.cpp Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp
+%.o: %.cpp Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp Intern.hpp
 	@c++ -std=c++98 $(FLAGS) -c $< -o $@
 	
 clean :
