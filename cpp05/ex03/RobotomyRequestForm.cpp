@@ -6,22 +6,22 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 16:56:10 by hznagui           #+#    #+#             */
-/*   Updated: 2023/12/18 15:04:45 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/12/18 18:24:53 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm() : AForm("robotomy request",72,45)
+RobotomyRequestForm::RobotomyRequestForm() : Form("robotomy request",72,45)
 {
     Target = "home";
 }
-RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("robotomy request",72,45)
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("robotomy request",72,45)
 {
     Target = target;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &obj) : AForm(obj)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &obj) : Form(obj)
 {
     Target = obj.Target;
 }

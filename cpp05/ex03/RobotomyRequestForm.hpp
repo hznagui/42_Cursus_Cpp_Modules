@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houdayfa <houdayfa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 16:56:12 by hznagui           #+#    #+#             */
-/*   Updated: 2023/12/17 22:28:21 by houdayfa         ###   ########.fr       */
+/*   Updated: 2023/12/18 18:24:59 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 #include <iostream>
 #include <time.h>
 #include <cstdlib> 
-#include "AForm.hpp"
-class RobotomyRequestForm : public AForm
+#include "Form.hpp"
+class RobotomyRequestForm : public Form
 {
     std::string Target;
     public:

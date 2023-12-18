@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 11:48:13 by hznagui           #+#    #+#             */
-/*   Updated: 2023/12/18 18:00:17 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/12/18 18:24:08 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Intern
     ~Intern();
     Intern(const Intern &);
     Intern &operator=(const Intern &);
-    AForm *makeForm(std::string form  , std::string target);
+    Form *makeForm(std::string form  , std::string target);
     class DoesntExist : public std::exception
     {
         virtual const char* what() const throw();

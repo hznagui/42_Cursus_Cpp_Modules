@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 18:09:56 by hznagui           #+#    #+#             */
-/*   Updated: 2023/12/14 17:01:09 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/12/18 18:14:07 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Bureaucrat::Bureaucrat(const std::string &name, const int &grade):Name(name)
 
 Bureaucrat::Bureaucrat(const Bureaucrat &obj): Name(obj.Name)
 {
-    Grade= obj.Grade;
+    Grade = obj.Grade;
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &obj)

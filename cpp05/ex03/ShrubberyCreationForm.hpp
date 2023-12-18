@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 16:56:17 by hznagui           #+#    #+#             */
-/*   Updated: 2023/12/16 22:55:23 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/12/18 18:25:17 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #define SHRUBBERYCREATIONFORM_HPP
 
 #include <iostream>
-#include "AForm.hpp"
+#include "Form.hpp"
 #include <fstream>
-class ShrubberyCreationForm : public AForm
+class ShrubberyCreationForm : public Form
 {
     std::string Target;
     public:

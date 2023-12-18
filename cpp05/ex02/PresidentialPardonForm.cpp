@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 16:56:06 by hznagui           #+#    #+#             */
-/*   Updated: 2023/12/18 15:06:52 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/12/18 18:21:34 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,6 @@ void PresidentialPardonForm::execute(Bureaucrat const & executor) const
         throw GradeTooLowException();
     else 
     {
-            std::cout << Target <<" has been pardoned by Zaphod Beeblebrox."<< std::endl;
+        std::cout << Target <<" has been pardoned by Zaphod Beeblebrox."<< std::endl;
     }
 }

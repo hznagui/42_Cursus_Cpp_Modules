@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houdayfa <houdayfa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 16:56:08 by hznagui           #+#    #+#             */
-/*   Updated: 2023/12/17 22:34:57 by houdayfa         ###   ########.fr       */
+/*   Updated: 2023/12/18 18:24:46 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 #define PRESIDENTIALPARDONFORM_HPP
 
 #include <iostream>
-#include "AForm.hpp"
-class PresidentialPardonForm : public AForm
+#include "Form.hpp"
+class PresidentialPardonForm : public Form
 {
     std::string Target;
     public:

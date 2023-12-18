@@ -6,23 +6,23 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 16:56:15 by hznagui           #+#    #+#             */
-/*   Updated: 2023/12/18 15:05:48 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/12/18 18:25:10 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm("shrubbery request",145,137)
+ShrubberyCreationForm::ShrubberyCreationForm() : Form("shrubbery request",145,137)
 {
     Target = "home";
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("shrubbery request",145,137)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("shrubbery request",145,137)
 {
     Target = target;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &obj) : AForm(obj)
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &obj) : Form(obj)
 {
     Target = obj.Target;
 }

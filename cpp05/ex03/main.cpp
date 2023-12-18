@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 18:10:04 by hznagui           #+#    #+#             */
-/*   Updated: 2023/12/18 18:05:48 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/12/18 18:31:29 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main()
     {
         Bureaucrat a("houdayfa",4),b("ana",150);
         Intern player;
-        AForm *rrf;
+        Form *rrf;
         rrf=player.makeForm("shrubbery request","Bender");
         a.signForm(*rrf);
         a.executeForm(*rrf);
