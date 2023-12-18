@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 18:15:18 by hznagui           #+#    #+#             */
-/*   Updated: 2023/12/16 22:23:46 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/12/18 17:58:55 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
     AForm(std::string,int sign, int exce);//
     AForm(const AForm &);//
     AForm &operator=(const AForm &);//
-    ~AForm();//
+    virtual ~AForm();//
     std::string getName() const ;//
     bool getSigned()const;//
     int getGradeToExce()const;//

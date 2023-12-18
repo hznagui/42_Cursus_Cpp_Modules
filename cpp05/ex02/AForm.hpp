@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 18:15:18 by hznagui           #+#    #+#             */
-/*   Updated: 2023/12/16 22:23:46 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/12/18 18:00:00 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,22 @@ class AForm
     bool sign;
     const int grade_exce , grade_sign;
 public:
-    AForm();//
-    AForm(std::string,int sign, int exce);//
-    AForm(const AForm &);//
-    AForm &operator=(const AForm &);//
-    ~AForm();//
-    std::string getName() const ;//
-    bool getSigned()const;//
-    int getGradeToExce()const;//
-    int getGradeToSign()const;//
-    void beSigned(Bureaucrat &);//
-    virtual  void execute(Bureaucrat const & executor) const = 0;//
-    class GradeTooHighException : public std::exception//
+    AForm();
+    AForm(std::string,int sign, int exce);
+    AForm(const AForm &);
+    AForm &operator=(const AForm &);
+    virtual ~AForm();
+    std::string getName() const ;
+    bool getSigned()const;
+    int getGradeToExce()const;
+    int getGradeToSign()const;
+    void beSigned(Bureaucrat &);
+    virtual  void execute(Bureaucrat const & executor) const = 0;
+    class GradeTooHighException : public std::exception
     {
         virtual const char* what() const throw();
     };    
-    class GradeTooLowException : public std::exception//
+    class GradeTooLowException : public std::exception
     {
         virtual const char* what() const throw();
     };
