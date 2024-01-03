@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 12:54:48 by hznagui           #+#    #+#             */
-/*   Updated: 2024/01/03 20:56:05 by hznagui          ###   ########.fr       */
+/*   Updated: 2024/01/03 21:00:25 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ void ScalarConverter::convert(std::string obj)
     else if(!std::strcmp(obj.c_str(),"-inff") || !std::strcmp(obj.c_str(),"-inf"))
     {infprint('-');
     return;}
-    int ret = ((obj.length() > 1 && check(obj)));
-    if (obj.length() > 1 && !ret)
+    int ret = ((obj.length() > 1)? ((check(obj) == 0) ? -1 : check(obj)) : 4);
+    if (ret==-1)
 		{std::cout << "only decimal or char values are accepted "<<std::endl;
 		return;}
     
