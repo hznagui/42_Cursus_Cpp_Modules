@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 12:54:48 by hznagui           #+#    #+#             */
-/*   Updated: 2024/01/03 17:22:03 by hznagui          ###   ########.fr       */
+/*   Updated: 2024/01/03 20:56:05 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,20 @@ void infprint(char a)
 }
 int check(std::string &str)
 {
-    int z=0,j=0,limit=((str[0] == '-') ? (1) : (0));
-    // str[str.length()]='f';
+    int z=0,j=0,limit=((str[0] == '-') ? (1) : (0)),m=0;
     for (unsigned long i=0; i < str.length();i++)
 	{
         if (str[i]=='.')
             z++;
         if (str[i]=='-')
             j++;
-		if ((!isdigit(str[i]) && str[i] != '-' && str[i] != '.' ) || z > 1 || j > limit )
-			return 1;
+        if (str[i]== 'f')
+            m++;
+		if ((!isdigit(str[i]) && str[i] != '-' && str[i] != '.' && str[i] != 'f' ) || m>1|| z > 1 || j > limit )
+			return 0;
 	}
-	return 0;
+    int ret = ((z == 1 && m == 1)? 2:((z==1) ? 3 : 1 ));
+	return ret;
 }
 void ScalarConverter::convert(std::string obj)
 {
@@ -54,9 +56,11 @@ void ScalarConverter::convert(std::string obj)
     else if(!std::strcmp(obj.c_str(),"-inff") || !std::strcmp(obj.c_str(),"-inf"))
     {infprint('-');
     return;}
-    if (obj.length() > 1 && check(obj))
+    int ret = ((obj.length() > 1 && check(obj)));
+    if (obj.length() > 1 && !ret)
 		{std::cout << "only decimal or char values are accepted "<<std::endl;
 		return;}
+    
     int a = ((obj.length() > 1) ? (atoi(obj.c_str())) : ((isdigit(obj[0])) ? (atoi(obj.c_str())) :( obj[0])) );
     std::cout << "char: " ; 
     if (a>126 || a < 32)
@@ -64,6 +68,7 @@ void ScalarConverter::convert(std::string obj)
         else 
             std::cout << char(a) << std::endl;
     std::cout << "int: " << (int)a << std::endl;
-    std::cout << "float: " << (float)a << std::endl;
+    std::cout << std::fixed;
+    std::cout << "float: " << std::setprecision(1)<<(float)a << std::endl;
     std::cout << "double: " << (double)(a) << std::endl;
 }
