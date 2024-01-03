@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 12:54:48 by hznagui           #+#    #+#             */
-/*   Updated: 2024/01/03 21:00:25 by hznagui          ###   ########.fr       */
+/*   Updated: 2024/01/03 22:20:50 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,19 +56,44 @@ void ScalarConverter::convert(std::string obj)
     else if(!std::strcmp(obj.c_str(),"-inff") || !std::strcmp(obj.c_str(),"-inf"))
     {infprint('-');
     return;}
-    int ret = ((obj.length() > 1)? ((check(obj) == 0) ? -1 : check(obj)) : 4);
+    int ret = ((obj.length() > 1)? ((check(obj) == 0) ? -1 : check(obj)) : 1);
     if (ret==-1)
 		{std::cout << "only decimal or char values are accepted "<<std::endl;
 		return;}
-    
-    int a = ((obj.length() > 1) ? (atoi(obj.c_str())) : ((isdigit(obj[0])) ? (atoi(obj.c_str())) :( obj[0])) );
-    std::cout << "char: " ; 
-    if (a>126 || a < 32)
-        std::cout << "Non displayable"<<std::endl;
+    if (ret == 1)
+    {
+        int a = ((obj.length() > 1) ? (atoi(obj.c_str())) : ((isdigit(obj[0])) ? (atoi(obj.c_str())) :( obj[0])) );
+        std::cout << "char: " ; 
+        if (a>126 || a < 32)
+            std::cout << "Non displayable"<<std::endl;
+            else 
+                std::cout << static_cast<char>(a) << std::endl;
+        std::cout << "int: " << static_cast<int> (a) << std::endl;
+        std::cout << "float: "<< static_cast<float>(a) <<".0f"<< std::endl;
+        std::cout << "double: " << static_cast<double>(a) <<".0"<< std::endl;
+    }
+    else if (ret == 2)
+    {
+        float a = static_cast<float>(atof(obj.c_str()));
+        std::cout << "char: " ; 
+        if (a > 126 || a < 32)
+            std::cout << "Non displayable"<<std::endl;
         else 
-            std::cout << char(a) << std::endl;
-    std::cout << "int: " << (int)a << std::endl;
-    std::cout << std::fixed;
-    std::cout << "float: " << std::setprecision(1)<<(float)a << std::endl;
-    std::cout << "double: " << (double)(a) << std::endl;
+            std::cout << static_cast<char>(a) << std::endl;
+        std::cout << "int: " << static_cast<int> (a) << std::endl;
+        std::cout << "float: "<< a << "f"<<std::endl;
+        std::cout << "double: " << static_cast<double>(a)<< std::endl;
+    }
+    else if (ret == 3)
+    {
+        double a = (atof(obj.c_str()));
+        std::cout << "char: " ; 
+        if (a > 126 || a < 32)
+            std::cout << "Non displayable"<<std::endl;
+        else 
+            std::cout << static_cast<char>(a) << std::endl;
+        std::cout << "int: " << static_cast<int> (a) << std::endl;
+        std::cout << "float: "<< static_cast<float>(a)<< "f"<<std::endl;
+        std::cout << "double: " << a << std::endl;
+    }
 }
