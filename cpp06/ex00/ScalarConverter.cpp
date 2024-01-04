@@ -6,13 +6,22 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 12:54:48 by hznagui           #+#    #+#             */
-/*   Updated: 2024/01/03 22:20:50 by hznagui          ###   ########.fr       */
+/*   Updated: 2024/01/04 11:35:30 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
 
 ScalarConverter::ScalarConverter(){}
+ScalarConverter::ScalarConverter(const ScalarConverter &obj){(void)obj;}
+ScalarConverter & ScalarConverter::operator=(const ScalarConverter &obj)
+{
+    (void)obj;
+    return *this;
+}
+
+ScalarConverter::~ScalarConverter(){}
+
 
 void nanprint()
 {
