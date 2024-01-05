@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 12:54:48 by hznagui           #+#    #+#             */
-/*   Updated: 2024/01/05 10:56:46 by hznagui          ###   ########.fr       */
+/*   Updated: 2024/01/05 12:21:31 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int check(std::string &str)
 		if ((!isdigit(str[i]) && str[i] != '-' && str[i] != '.' && str[i] != 'f' ) || m>1|| z > 1 || j > limit )
 			return 0;
 	}
-    int ret = ((z == 1 && m == 1)? 2:((z==1) ? 3 : 1 ));
+    int ret = ((z == 1 && m == 1)? 2 : ((z == 1) ? 3 : 1 ));
 	return ret;
 }
 void ScalarConverter::convert(std::string obj)
@@ -71,6 +71,9 @@ void ScalarConverter::convert(std::string obj)
 		return;}
     if (ret == 1)
     {
+    if (obj.length() > 19)
+		{std::cout << "this will over flow "<<std::endl;
+		return;}
         int a = ((obj.length() > 1) ? (atoi(obj.c_str())) : ((isdigit(obj[0])) ? (atoi(obj.c_str())) :( obj[0])) );
         std::cout << "char: " ; 
         if (a>126 || a < 32)

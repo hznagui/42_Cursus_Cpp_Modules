@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serialize.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/04 11:36:58 by hznagui           #+#    #+#             */
-/*   Updated: 2024/01/05 16:52:34 by hznagui          ###   ########.fr       */
+/*   Created: 2024/01/05 16:56:14 by hznagui           #+#    #+#             */
+/*   Updated: 2024/01/05 17:02:18 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Serialize.hpp"
 
-Serialize::Serialize(){};
-Serialize::~Serialize(){};
-Serialize &Serialize::operator=(const Serialize &obj){
-    (void)obj;
-    return *this;};
-uintptr_t Serialize::serialize(Data *ptr)
+int main()
 {
-    return reinterpret_cast<uintptr_t>(ptr);
-}
-Data *Serialize::deserialize(uintptr_t raw)
-{
-    return reinterpret_cast<Data *>(raw);
-}
+    Data obj;
+    obj.a=7;
+    obj.b=9;
+    obj.h=10;
+
+    Data *h=Serialize::deserialize( Serialize::serialize(&obj));
+    std::cout <<"a = "<< h->a << " b = " << h->b << " h = "<<h->h<<std::endl;
+ }

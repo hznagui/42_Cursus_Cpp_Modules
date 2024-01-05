@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 11:37:01 by hznagui           #+#    #+#             */
-/*   Updated: 2024/01/04 11:40:42 by hznagui          ###   ########.fr       */
+/*   Updated: 2024/01/05 16:56:10 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define SERIALIZE_HPP
 
 #include <iostream>
+#include "Data.hpp"
 class  Serialize
 {
     Serialize();
