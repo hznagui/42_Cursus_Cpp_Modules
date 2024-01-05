@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 12:54:48 by hznagui           #+#    #+#             */
-/*   Updated: 2024/01/05 12:21:31 by hznagui          ###   ########.fr       */
+/*   Updated: 2024/01/05 17:08:56 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,21 @@ int check(std::string &str)
     int z=0,j=0,limit=((str[0] == '-') ? (1) : (0)),m=0;
     for (unsigned long i=0; i < str.length();i++)
 	{
-        if (str[i]=='.')
-            z++;
+        if (str[i] == '.' )
+            {if (isdigit( str[i+1]))
+                z++;
+            else 
+                    return 0;}
         if (str[i]=='-')
             j++;
-        if (str[i]== 'f')
-            m++;
+        if (str[i] == 'f')
+            {
+                if (z>0)
+                    m++;
+                else 
+                    return 0;
+            }
+        
 		if ((!isdigit(str[i]) && str[i] != '-' && str[i] != '.' && str[i] != 'f' ) || m>1|| z > 1 || j > limit )
 			return 0;
 	}
