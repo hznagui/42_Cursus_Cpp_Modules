@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 12:54:48 by hznagui           #+#    #+#             */
-/*   Updated: 2024/01/04 11:35:30 by hznagui          ###   ########.fr       */
+/*   Updated: 2024/01/05 10:56:46 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,13 +84,14 @@ void ScalarConverter::convert(std::string obj)
     else if (ret == 2)
     {
         float a = static_cast<float>(atof(obj.c_str()));
+            
         std::cout << "char: " ; 
         if (a > 126 || a < 32)
             std::cout << "Non displayable"<<std::endl;
         else 
             std::cout << static_cast<char>(a) << std::endl;
         std::cout << "int: " << static_cast<int> (a) << std::endl;
-        std::cout << "float: "<< a << "f"<<std::endl;
+        std::cout << "float: " << a << "f"<<std::endl;
         std::cout << "double: " << static_cast<double>(a)<< std::endl;
     }
     else if (ret == 3)
