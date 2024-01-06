@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 17:54:28 by hznagui           #+#    #+#             */
-/*   Updated: 2024/01/06 11:07:57 by hznagui          ###   ########.fr       */
+/*   Updated: 2024/01/06 11:41:09 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,6 @@
 
 #include <iostream>
 #include <cstdlib>
-#include "A.hpp"
-#include "B.hpp"
-#include "C.hpp"
 class Base
 {
     public:

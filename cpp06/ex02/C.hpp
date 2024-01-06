@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 17:54:34 by hznagui           #+#    #+#             */
-/*   Updated: 2024/01/06 10:58:09 by hznagui          ###   ########.fr       */
+/*   Updated: 2024/01/06 11:38:21 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define C_HPP
 
 #include "Base.hpp"
+class Base;
 class C : public Base
 {
     
