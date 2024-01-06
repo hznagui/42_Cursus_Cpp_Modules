@@ -6,7 +6,18 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 17:54:24 by hznagui           #+#    #+#             */
-/*   Updated: 2024/01/05 17:54:24 by hznagui          ###   ########.fr       */
+/*   Updated: 2024/01/06 10:57:53 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef B_HPP
+#define B_HPP
+
+#include "Base.hpp"
+class B : public Base
+{
+    
+};
+
+
+#endif
