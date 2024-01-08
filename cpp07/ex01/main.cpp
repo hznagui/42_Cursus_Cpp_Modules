@@ -5,25 +5,40 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/08 17:32:02 by hznagui           #+#    #+#             */
-/*   Updated: 2024/01/08 18:15:20 by hznagui          ###   ########.fr       */
+/*   Created: 2024/01/08 18:10:07 by hznagui           #+#    #+#             */
+/*   Updated: 2024/01/08 18:19:15 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "whatever.hpp"
+#include "iter.hpp"
+class Awesome
+{
+  public:
+    Awesome( void ) : _n( 42 ) { return; }
+    int get( void ) const { return this->_n; }
+  private:
+    int _n;
+};
 
-int main( void ) {
-int a = 2;
-int b = 3;
-::swap( a, b );
-std::cout << "a = " << a << ", b = " << b << std::endl;
-std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
-std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
-std::string c = "chaine1";
-std::string d = "chaine2";
-::swap(c, d);
-std::cout << "c = " << c << ", d = " << d << std::endl;
-std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
-std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
-return 0;
+std::ostream & operator<<( std::ostream & o, Awesome const & rhs )
+{
+  o << rhs.get();
+  return o;
+}
+
+template< typename T >
+void print( T& x )
+{
+  std::cout << x << std::endl;
+  return;
+}
+
+int main() {
+  int tab[] = { 0, 1, 2, 3, 4 };
+  Awesome tab2[5];
+
+  iter( tab, 5, print<const int> );
+  iter( tab2, 5, print<Awesome> );
+
+  return 0;
 }
