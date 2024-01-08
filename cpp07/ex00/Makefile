@@ -6,7 +6,7 @@
 #    By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/08 17:32:05 by hznagui           #+#    #+#              #
-#    Updated: 2024/01/08 17:43:27 by hznagui          ###   ########.fr        #
+#    Updated: 2024/01/08 17:51:50 by hznagui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,6 @@ NAME = whatever
 FLAGS = -Wall -Wextra -Werror #-fsanitize=address -g
 
 FILE = 	main.cpp\
-		whatever.cpp
 		
 
 OBJ_FILE = $(FILE:.cpp=.o)
