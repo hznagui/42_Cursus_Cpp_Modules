@@ -6,7 +6,14 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:35:15 by hznagui           #+#    #+#             */
-/*   Updated: 2024/01/09 11:35:15 by hznagui          ###   ########.fr       */
+/*   Updated: 2024/01/09 16:16:38 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
+#include  "Array.hpp"
+int main()
+{
+    char * a = new char();
+    std::cout << (int)*a << std::endl;
+}
