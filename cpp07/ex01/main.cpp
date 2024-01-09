@@ -6,28 +6,14 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 18:10:07 by hznagui           #+#    #+#             */
-/*   Updated: 2024/01/08 18:19:15 by hznagui          ###   ########.fr       */
+/*   Updated: 2024/01/09 10:45:50 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "iter.hpp"
-class Awesome
-{
-  public:
-    Awesome( void ) : _n( 42 ) { return; }
-    int get( void ) const { return this->_n; }
-  private:
-    int _n;
-};
-
-std::ostream & operator<<( std::ostream & o, Awesome const & rhs )
-{
-  o << rhs.get();
-  return o;
-}
 
 template< typename T >
-void print( T& x )
+void ftprint( T& x )
 {
   std::cout << x << std::endl;
   return;
@@ -35,10 +21,10 @@ void print( T& x )
 
 int main() {
   int tab[] = { 0, 1, 2, 3, 4 };
-  Awesome tab2[5];
+  char tab2[] = "salam";
 
-  iter( tab, 5, print<const int> );
-  iter( tab2, 5, print<Awesome> );
+  iter( tab, 5, ftprint<const int> );
+  iter( tab2, 5, ftprint<const char> );
 
   return 0;
 }
