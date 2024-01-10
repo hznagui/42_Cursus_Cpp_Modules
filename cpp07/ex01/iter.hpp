@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 17:58:25 by hznagui           #+#    #+#             */
-/*   Updated: 2024/01/09 11:02:31 by hznagui          ###   ########.fr       */
+/*   Updated: 2024/01/10 10:40:41 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,4 @@ template <class T, class H> void iter (T array[],int length , H (pointer))
     for (int i=0; i<length ;i++)
         pointer(array[i]);
 }
-#zendif
+#endif
