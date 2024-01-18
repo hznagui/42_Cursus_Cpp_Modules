@@ -6,7 +6,7 @@
 #    By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/18 11:39:33 by hznagui           #+#    #+#              #
-#    Updated: 2024/01/18 11:51:57 by hznagui          ###   ########.fr        #
+#    Updated: 2024/01/18 15:52:01 by hznagui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = Span
 FLAGS = -Wall -Wextra -Werror #-fsanitize=address -g
 
 FILE = 	main.cpp\
-		Span.cpp
+		Span.cpp\
 		
 
 OBJ_FILE = $(FILE:.cpp=.o)
