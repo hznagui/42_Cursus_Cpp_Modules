@@ -6,12 +6,12 @@
 #    By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/18 10:34:22 by hznagui           #+#    #+#              #
-#    Updated: 2024/01/18 11:21:07 by hznagui          ###   ########.fr        #
+#    Updated: 2024/01/18 11:21:44 by hznagui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME = Array
+NAME = easyfind
 
 FLAGS = -Wall -Wextra -Werror #-fsanitize=address -g
 
@@ -26,11 +26,11 @@ COLOUR_RED=\033[1;31m
 
 all : $(NAME)
 
-$(NAME) : $(OBJ_FILE) 	Array.hpp 
+$(NAME) : $(OBJ_FILE) 	easyfind.hpp 
 	@c++ -std=c++98 $(FLAGS) $(FILE) -o $(NAME)
 	@echo "$(COLOUR_GREEN)--->[mandatory part successfully created ✅]<---"
 	
-%.o: %.cpp 	Array.hpp 
+%.o: %.cpp 	easyfind.hpp 
 	@c++ -std=c++98 $(FLAGS) -c $< -o $@
 	
 clean :

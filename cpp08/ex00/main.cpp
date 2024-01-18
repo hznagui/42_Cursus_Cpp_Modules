@@ -6,7 +6,14 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 10:34:19 by hznagui           #+#    #+#             */
-/*   Updated: 2024/01/18 10:34:19 by hznagui          ###   ########.fr       */
+/*   Updated: 2024/01/18 11:23:37 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "easyfind.hpp"
+
+int main()
+{
+    std::vector<int> v={8,9,7,48,8789,5,10};
+    std::cout << easyfind(v,5)<<std::endl;
+}
