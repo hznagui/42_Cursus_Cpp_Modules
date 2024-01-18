@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 11:39:39 by hznagui           #+#    #+#             */
-/*   Updated: 2024/01/18 16:05:37 by hznagui          ###   ########.fr       */
+/*   Updated: 2024/01/18 16:11:43 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ Span::Span()
 }
 Span::Span(unsigned int number) : size(number){}
 
-Span::Span(Span &obj)
+Span::Span(const Span &obj)
 {
     v=obj.v;
     size=obj.size;
 }
-Span &Span::operator=(Span &obj)
+Span &Span::operator=(const Span &obj)
 {
     v=obj.v;
     size=obj.size;
@@ -50,7 +50,6 @@ int Span::shortestSpan()
     std::vector<int>::iterator begin=sorted.begin(), ending = begin+1;
     while (begin != sorted.end()-1)
     {
-        std::cout << *ending<<std::endl;
         tmp = *ending - *begin;
         if (tmp < ret)
             ret = tmp;

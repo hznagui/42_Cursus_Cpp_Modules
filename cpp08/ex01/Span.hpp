@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 11:39:41 by hznagui           #+#    #+#             */
-/*   Updated: 2024/01/18 16:06:11 by hznagui          ###   ########.fr       */
+/*   Updated: 2024/01/18 16:11:14 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ class Span
     public:
     Span(unsigned int);
     Span();//
-    Span(Span &);//
-    Span &operator=(Span &);//
+    Span(const Span &);//
+    Span &operator=(const Span &);//
     void addNumber(int);//
     void assign(int);//
     int  shortestSpan();
