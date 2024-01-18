@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 11:39:36 by hznagui           #+#    #+#             */
-/*   Updated: 2024/01/18 16:10:14 by hznagui          ###   ########.fr       */
+/*   Updated: 2024/01/18 16:26:30 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ int main()
     Span sp = Span(5);
     sp.addNumber(3);
     sp.addNumber(6);
-    sp.addNumber(17);
+    sp.addNumber(30);
     sp.addNumber(9);
-    sp.addNumber(11);
+    sp.addNumber(19);
     std::cout << sp.shortestSpan() << std::endl;
     std::cout << sp.longestSpan() << std::endl;}
     catch (std::exception &a)
