@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 11:39:39 by hznagui           #+#    #+#             */
-/*   Updated: 2024/01/19 11:00:11 by hznagui          ###   ########.fr       */
+/*   Updated: 2024/01/20 16:57:07 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ Span::Span()
 {
     size=0;
 }
+Span::~Span(){}
 Span::Span(unsigned int number) : size(number){}
 
 Span::Span(const Span &obj)
