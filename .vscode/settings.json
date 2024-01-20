@@ -68,7 +68,11 @@
         "memory_resource": "cpp",
         "filesystem": "cpp",
         "__tree": "cpp",
-        "set": "cpp"
+        "set": "cpp",
+        "forward_list": "cpp",
+        "list": "cpp",
+        "span": "cpp",
+        "map": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
