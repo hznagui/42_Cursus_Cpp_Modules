@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 11:39:39 by hznagui           #+#    #+#             */
-/*   Updated: 2024/01/21 11:09:47 by hznagui          ###   ########.fr       */
+/*   Updated: 2024/01/22 09:37:44 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,14 @@ void Span::addNumber(int nbr)
 void Span::assign(std::vector<int>::iterator begin , std::vector<int>::iterator last)
 {
     v.assign(begin,last);
+}
+std::vector<int>::iterator Span::begin()
+{
+    return v.begin();
+}
+std::vector<int>::iterator Span::end()
+{
+    return v.end();
 }
 int Span::shortestSpan()
 {
