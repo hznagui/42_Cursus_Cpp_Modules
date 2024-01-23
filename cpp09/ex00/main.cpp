@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 14:27:28 by hznagui           #+#    #+#             */
-/*   Updated: 2024/01/23 11:52:44 by hznagui          ###   ########.fr       */
+/*   Updated: 2024/01/23 12:18:00 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,9 @@ int main (int argc,char **argv)
     if (argc == 2)
     {
         std::string tmp,tmp1;
-        std::map<std::string,BitcoinExchage>
-        std::fstream file (argv[1]),database("data.csv");
+        std::map<std::string,BitcoinExchange> data;
+        std::fstream file (argv[1]);
+        std::fstream database("data.csv");
         // if (!file.is_open())
         //     error(2);
         if (!database.is_open())
