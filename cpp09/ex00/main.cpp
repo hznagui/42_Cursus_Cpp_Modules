@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 14:27:28 by hznagui           #+#    #+#             */
-/*   Updated: 2024/01/24 16:23:23 by hznagui          ###   ########.fr       */
+/*   Updated: 2024/01/24 17:29:45 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,9 @@ void parsing_error (int d ,std::string str = "test")
     else if (d == 6)
             std::cout << "\033[31mError : check date !\033[0m" << std::endl;
     else if (d == 7)
-            std::cout << "\033[31mError : check value !\033[0m" << std::endl; 
+            std::cout << "\033[31mError : check value !\033[0m" << std::endl;
+            else if (d==8)
+            std::cout << "\033[31mError : too large a number.\033[0m" << std::endl; 
 }
 int number(std::string a)
 {
@@ -68,8 +70,8 @@ int check_number(std::string str)
         if ((!std::isdigit(nbr[o]) && nbr[o] != '.') || z > 1)
             return (parsing_error(7),1);
     }
-    
-    std::cout << nbr << std::endl;
+    if (std::atof(nbr.c_str()) > 1000 )
+        return (parsing_error(8),1);
     return 0;
 }
 int main (int argc,char **argv)
