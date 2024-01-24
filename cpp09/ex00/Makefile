@@ -6,13 +6,13 @@
 #    By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/22 14:27:31 by hznagui           #+#    #+#              #
-#    Updated: 2024/01/24 18:25:21 by hznagui          ###   ########.fr        #
+#    Updated: 2024/01/24 19:41:56 by hznagui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = btc
 
-FLAGS = -Wall -Wextra -Werror -fsanitize=address -g
+FLAGS = -Wall -Wextra -Werror #-fsanitize=address -g
 
 FILE = 	main.cpp\
 		BitcoinExchange.cpp
