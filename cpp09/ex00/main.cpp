@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 14:27:28 by hznagui           #+#    #+#             */
-/*   Updated: 2024/01/24 15:16:08 by hznagui          ###   ########.fr       */
+/*   Updated: 2024/01/24 15:31:08 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,8 @@ int number(std::string a)
 int check_date(std::string str)
 {
     std::string year = str.substr(0,4), month=str.substr(5,2) ,day=str.substr(8,2);
-    // std::cout << year << "/"<<month<< "/"<<day<<std::endl;
-    if (std::atoi(year.c_str()) < 2009 || std::atoi(month.c_str()) > 12 || std::atoi(day.c_str()) > 31 || (std::atoi(month.c_str()) == 2 && std::atoi(day.c_str()) > 29)  )
+    if (std::atoi(year.c_str()) < 2009 || std::atoi(month.c_str()) > 12 || std::atoi(day.c_str()) > 31 || (std::atoi(month.c_str()) == 2 && std::atoi(day.c_str()) > 29) || std::atoi(month.c_str()) == 0 || std::atoi(day.c_str()) == 0 || (std::atoi(year.c_str()) == 2009 && std::atoi(month.c_str()) == 1 && std::atoi(day.c_str()) == 1))
         return 1 ;
-    
     return 0;
 }
 
