@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 14:27:22 by hznagui           #+#    #+#             */
-/*   Updated: 2024/01/23 12:19:58 by hznagui          ###   ########.fr       */
+/*   Updated: 2024/01/24 13:21:52 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ BitcoinExchange & BitcoinExchange::operator=(const BitcoinExchange & obj)
 {
     date=obj.date; 
     exchange_rate=obj.exchange_rate;
-    return *this;
+    return *this;   
 }
 BitcoinExchange::BitcoinExchange(const BitcoinExchange & obj)
 {
