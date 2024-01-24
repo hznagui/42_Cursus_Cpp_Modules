@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 14:27:28 by hznagui           #+#    #+#             */
-/*   Updated: 2024/01/24 15:41:50 by hznagui          ###   ########.fr       */
+/*   Updated: 2024/01/24 16:23:23 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,9 @@ void parsing_error (int d ,std::string str = "test")
     else if (d == 5)
             std::cout << "\033[31mError : bad input => "<< str<<"\033[0m" << std::endl;
     else if (d == 6)
-            std::cout << "\033[31mError : check date !\033[0m" << std::endl; 
+            std::cout << "\033[31mError : check date !\033[0m" << std::endl;
+    else if (d == 7)
+            std::cout << "\033[31mError : check value !\033[0m" << std::endl; 
 }
 int number(std::string a)
 {
@@ -51,8 +53,24 @@ int check_date(std::string str)
 int check_number(std::string str)
 {
     std::string nbr = str.substr(13);
+    int z=0;
+    if (nbr[0]=='.')
+        return (parsing_error(7),1);
+    for (size_t o = 0; o< nbr.length();o++)
+    {
+        if (nbr[o] == '.')
+        {
+            if (std::isdigit(nbr[o - 1])&&(std::isdigit(nbr[o + 1])))
+                z++;
+            else 
+                return (parsing_error(7),1);
+        }
+        if ((!std::isdigit(nbr[o]) && nbr[o] != '.') || z > 1)
+            return (parsing_error(7),1);
+    }
+    
     std::cout << nbr << std::endl;
-    return 1;
+    return 0;
 }
 int main (int argc,char **argv)
 {
