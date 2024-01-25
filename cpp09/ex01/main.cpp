@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 10:30:56 by hznagui           #+#    #+#             */
-/*   Updated: 2024/01/25 16:14:02 by hznagui          ###   ########.fr       */
+/*   Updated: 2024/01/25 16:32:03 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,7 @@ int main(int argc,char **argv)
         main += argv[i];
         main += ' ';
     }
-    // std::cout << main <<std::endl;
-    if (parsing(main))
+    if (parsing(main) || calcul(main))
     {
         std::cout << "check ur argement pleaseeeee !!!"<<std::endl;
         return 1;
