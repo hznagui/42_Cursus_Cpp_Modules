@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 14:27:28 by hznagui           #+#    #+#             */
-/*   Updated: 2024/01/24 19:43:36 by hznagui          ###   ########.fr       */
+/*   Updated: 2024/01/25 10:21:35 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,13 +102,9 @@ int main (int argc,char **argv)
             else if (check_date(tmp1) || check_number(tmp1)){}
             else
             {
-                int nbr = date(tmp1.substr(0,10));
-                std::map<int , BitcoinExchange>::iterator iter = data.find(nbr);;
-                while (iter ==  data.end())
-                {
-                    iter = data.find(nbr);
-                    nbr--;
-                }
+                std::map<int , BitcoinExchange>::iterator iter = data.find(date(tmp1.substr(0,10)));
+                for (int nbr = date(tmp1.substr(0,10));iter ==  data.end();nbr--)
+                {iter = data.find(nbr);}
                 test = tmp1.substr(13);
                 std::cout << tmp1.substr(0,10)  << " => " << test << " = " <<std::fixed<< std::setprecision(2) << std::atof (test.c_str()) * iter->second.getexchange_rate() << std::endl;                
             }
