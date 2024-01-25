@@ -1,23 +1,28 @@
-#include <iostream>       // std::cout
-#include <stack>          // std::stack
-#include <vector>         // std::vector
-#include <deque>          // std::deque
+#include <iostream>
+#include <stack>
 
-int main ()
-{
-  std::deque<int> mydeque (3,100);          // deque with 3 elements
-  std::vector<int> myvector (2,200);        // vector with 2 elements
+int main() {
+    std::stack<int> myStack;
 
-  std::stack<int> first;                    // empty stack
-  std::stack<int> second (mydeque);         // stack initialized to copy of deque
+    // Push some elements onto the stack
+    myStack.push(10);
+    myStack.push(20);
+    myStack.push(30);
 
-  std::stack<int,std::vector<int> > third;  // empty stack using vector
-  std::stack<int,std::vector<int> > fourth (myvector);
+    // Access and make a copy of the top two elements without removing them
+    if (myStack.size() >= 2) {
+        int topElement1 = myStack.top();
+        myStack.pop();  // Pop the top element
+        int topElement2 = myStack.top();
+        
+        // Now, you can use topElement1 and topElement2 as needed without modifying the stack
 
-  std::cout << "size of first: " << first.size() << '\n';
-  std::cout << "size of second: " << second.size() << '\n';
-  std::cout << "size of third: " << third.size() << '\n';
-  std::cout << "size of fourth: " << fourth.size() << '\n';
+        // Push back the top two elements to the stack
+        myStack.push(topElement1);
+        myStack.push(topElement2);
+    } else {
+        std::cout << "Not enough elements in the stack." << std::endl;
+    }
 
-  return 0;
+    return 0;
 }
