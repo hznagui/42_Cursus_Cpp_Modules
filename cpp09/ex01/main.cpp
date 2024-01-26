@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 10:30:56 by hznagui           #+#    #+#             */
-/*   Updated: 2024/01/25 18:37:14 by hznagui          ###   ########.fr       */
+/*   Updated: 2024/01/26 14:22:35 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ int calcul(std::string main)
                 stack.push(a * b);
         }
     }
+    if (stack.size() > 1)
+        return 1;
     std::cout << "Result => "<< stack.top()<<std::endl;
     return 0;   
 }
