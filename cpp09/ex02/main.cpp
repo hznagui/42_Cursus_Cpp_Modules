@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 14:33:38 by hznagui           #+#    #+#             */
-/*   Updated: 2024/01/30 11:40:10 by hznagui          ###   ########.fr       */
+/*   Updated: 2024/01/30 12:14:45 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int parsing (std::string str)
 {
     for(size_t a = 0 ; a < str.length() ; a++)
     {
-        if (!isdigit(str[a]) || str[a] != ' ')
+        if (!isdigit(str[a]) && str[a] != ' ')
             return 1;
     }
     std::stringstream cstr(str);
@@ -29,6 +29,7 @@ int parsing (std::string str)
     }
     return 0;
 }
+
 
 int main(int argc,char **argv)
 {
@@ -48,5 +49,16 @@ int main(int argc,char **argv)
         std::cout << "check ur argement pleaseeeee !!!"<<std::endl;
         return 1;
     }
+    //
+    std::vector<int> vect;
+    std::stringstream cstr(main);
+    std::string tmp;
+    while (!cstr.eof())
+    {
+        std::getline(cstr,tmp,' ');
+        if (std::isdigit(tmp[0]))
+            vect.push_back(std::atoi(tmp.c_str()));
+    }
     
+    return 0;
 }
