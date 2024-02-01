@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 14:33:38 by hznagui           #+#    #+#             */
-/*   Updated: 2024/01/30 12:14:45 by hznagui          ###   ########.fr       */
+/*   Updated: 2024/02/01 11:14:23 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,11 @@ int parsing (std::string str)
     return 0;
 }
 
-
+void jacob_number(std::vector<int> &vector,long size)
+{
+    long i ; 
+    if ()
+}
 int main(int argc,char **argv)
 {
     if (argc <= 1)
@@ -50,15 +54,24 @@ int main(int argc,char **argv)
         return 1;
     }
     //
-    std::vector<int> vect;
+    std::vector<int> vect,vector;
+    std::vector<int ,int >peer;
+    std::list<int> list,li;
+    std::list<int,int> peer1;
     std::stringstream cstr(main);
+    std::vector<long>jacob_sequence;
     std::string tmp;
     while (!cstr.eof())
     {
         std::getline(cstr,tmp,' ');
         if (std::isdigit(tmp[0]))
+        {
             vect.push_back(std::atoi(tmp.c_str()));
+            li.push_back(std::atoi(tmp.c_str()));
+        }
     }
+    jacob_number(jacob_sequence,vec.size());
+    
     
     return 0;
 }
