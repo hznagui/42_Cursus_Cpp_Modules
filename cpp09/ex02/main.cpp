@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 14:33:38 by hznagui           #+#    #+#             */
-/*   Updated: 2024/02/01 16:38:48 by hznagui          ###   ########.fr       */
+/*   Updated: 2024/02/01 17:15:26 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int main(int argc,char **argv)
     }
     // declaration
     unsigned int finish;
-    int bool = -99;
+    int boll = -99;
     std::vector<int> vect,vector;
     std::vector< std::pair<int ,int> >peer;
     std::list<int> list,li;
@@ -80,17 +80,12 @@ int main(int argc,char **argv)
     // starting sorting vector 
     if (vect.size() % 2)
     {
-        odd = vect[vect.size()-1];
+        boll = vect[vect.size()-1];
         vect.pop_back();
     }
-    // std::cout << odd << std::endl;
     //now fill vector with peers
     for (unsigned long i = 0; i < vect.size() ; i+=2)
     {peer.push_back(std::make_pair(vect[i],vect[i+1]));}
-        for (unsigned long i = 0; i < peer.size() ; i++)
-    {
-    std::cout<<"beffor "<<peer[i].first <<"==="<<peer[i].second<<std::endl;
-    }
     //now sort peers
     for (unsigned long i = 0; i < peer.size() ; i++)
     {
@@ -108,11 +103,12 @@ int main(int argc,char **argv)
     for (unsigned long i = 0; i < peer.size() ; i++)
     {vect.push_back(peer[i].second);}
     peer.clear();
+    if (boll != -99)
+        vect.push_back(boll);
     jacob_number(jacob_sequence,vect.size());
     for (unsigned long i = 0; i < jacob_sequence.size() ; i++)
     {
         finish=jacob_sequence[i];
-                // std::cout << jacob_sequence[i] <<std::endl;
         for  (unsigned int start=jacob_sequence[i+1];finish<start;start--)
         {
             if ((start-1)<vect.size())
@@ -124,9 +120,9 @@ int main(int argc,char **argv)
     }
     for (unsigned long i = 0; i < vector.size() ; i++)
     {
-        std::cout<<"after "<<vector[i]<<std::endl;
+        std::cout<<" "<<vector[i];
     }
-    //     std::cout<<" bool " << odd<<std::endl;
+        std::cout<<std::endl;
     
     
     
