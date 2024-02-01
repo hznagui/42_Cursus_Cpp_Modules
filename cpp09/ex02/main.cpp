@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 14:33:38 by hznagui           #+#    #+#             */
-/*   Updated: 2024/02/01 11:30:42 by hznagui          ###   ########.fr       */
+/*   Updated: 2024/02/01 16:11:18 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ int main(int argc,char **argv)
         return 1;
     }
     // declaration
+    int odd = -99;
     std::vector<int> vect,vector;
     std::vector< std::pair<int ,int> >peer;
     std::list<int> list,li;
@@ -75,11 +76,41 @@ int main(int argc,char **argv)
             li.push_back(std::atoi(tmp.c_str()));
         }
     }
-    jacob_number(jacob_sequence,vect.size());
-    for (unsigned long i=0; i < jacob_sequence.size();i++)
+    // starting sorting vector 
+    if (vect.size() % 2)
     {
-        std::cout << jacob_sequence[i]<<std::endl;
+        odd = vect[vect.size()-1];
+        vect.pop_back();
     }
+    // std::cout << odd << std::endl;
+    //now fill vector with peers
+    for (unsigned long i = 0; i < vect.size() ; i+=2)
+    {peer.push_back(std::make_pair(vect[i],vect[i+1]));}
+        for (unsigned long i = 0; i < peer.size() ; i++)
+    {
+    std::cout<<"beffor "<<peer[i].first <<"==="<<peer[i].second<<std::endl;
+    }
+    //now sort peers
+    for (unsigned long i = 0; i < peer.size() ; i++)
+    {
+        if (peer[i].first<peer[i].second)
+        {std::swap(peer[i].first,peer[i].second);}
+        }
+    //now sorting the first ones 
+    std::sort(peer.begin(),peer.end());
+    // now poshing the first one 
+    for (unsigned long i = 0; i < peer.size() ; i++)
+    {
+        std::cout<<"after "<<peer[i].first <<"==="<<peer[i].second<<std::endl;
+    }
+    jacob_number(jacob_sequence,peer.size());
+    vect.clear();
+    //starting to fill or main vector 
+    vector.push_back(peer[0].second);
+    for (unsigned long i = 0; i < peer.size() ; i++)
+    {vector.push_back(peer[i].first);}
+    
+    
     
     return 0;
 }
