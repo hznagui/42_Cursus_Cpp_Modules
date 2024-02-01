@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 14:33:38 by hznagui           #+#    #+#             */
-/*   Updated: 2024/02/01 16:11:18 by hznagui          ###   ########.fr       */
+/*   Updated: 2024/02/01 16:38:48 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ int parsing (std::string str)
     return 0;
 }
 
-void jacob_number(std::vector<long> &vector,int size)
+void jacob_number(std::vector<unsigned int > &vector,int size)
 {
     int j0 = 0, j1 = 1;
-    for (int j = 0; j < size; ++j) {
+    for (int j = 0; j <= size; j++) {
         j = j1 + 2 * j0;
         vector.push_back(j);
         j0 = j1;
@@ -58,13 +58,14 @@ int main(int argc,char **argv)
         return 1;
     }
     // declaration
-    int odd = -99;
+    unsigned int finish;
+    int bool = -99;
     std::vector<int> vect,vector;
     std::vector< std::pair<int ,int> >peer;
     std::list<int> list,li;
     std::list< std::pair<int,int> > peer1;
     std::stringstream cstr(main);
-    std::vector<long>jacob_sequence;
+    std::vector<unsigned int>jacob_sequence;
     std::string tmp;
     //
     while (!cstr.eof())
@@ -99,16 +100,34 @@ int main(int argc,char **argv)
     //now sorting the first ones 
     std::sort(peer.begin(),peer.end());
     // now poshing the first one 
-    for (unsigned long i = 0; i < peer.size() ; i++)
-    {
-        std::cout<<"after "<<peer[i].first <<"==="<<peer[i].second<<std::endl;
-    }
-    jacob_number(jacob_sequence,peer.size());
     vect.clear();
-    //starting to fill or main vector 
     vector.push_back(peer[0].second);
     for (unsigned long i = 0; i < peer.size() ; i++)
     {vector.push_back(peer[i].first);}
+    //fill our tmp victor and clear the peer vector
+    for (unsigned long i = 0; i < peer.size() ; i++)
+    {vect.push_back(peer[i].second);}
+    peer.clear();
+    jacob_number(jacob_sequence,vect.size());
+    for (unsigned long i = 0; i < jacob_sequence.size() ; i++)
+    {
+        finish=jacob_sequence[i];
+                // std::cout << jacob_sequence[i] <<std::endl;
+        for  (unsigned int start=jacob_sequence[i+1];finish<start;start--)
+        {
+            if ((start-1)<vect.size())
+            {
+                std::vector<int>::iterator it = std::lower_bound(vector.begin(),vector.end(),vect[start-1]);
+                vector.insert(it,vect[start-1]);
+            }
+        }        
+    }
+    for (unsigned long i = 0; i < vector.size() ; i++)
+    {
+        std::cout<<"after "<<vector[i]<<std::endl;
+    }
+    //     std::cout<<" bool " << odd<<std::endl;
+    
     
     
     
