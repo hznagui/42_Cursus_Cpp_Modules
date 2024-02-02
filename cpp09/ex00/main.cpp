@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 14:27:28 by hznagui           #+#    #+#             */
-/*   Updated: 2024/01/25 10:21:35 by hznagui          ###   ########.fr       */
+/*   Updated: 2024/02/02 09:14:05 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,31 @@ int date(std::string a)
 int check_date(std::string str)
 {
     std::string year = str.substr(0,4), month=str.substr(5,2) ,day=str.substr(8,2);
-    if (std::atoi(year.c_str()) < 2009 || std::atoi(month.c_str()) > 12 || std::atoi(day.c_str()) > 31 || (std::atoi(month.c_str()) == 2 && std::atoi(day.c_str()) > 29) || std::atoi(month.c_str()) == 0 || std::atoi(day.c_str()) == 0 || (std::atoi(year.c_str()) == 2009 && std::atoi(month.c_str()) == 1 && std::atoi(day.c_str()) == 1))
+    if (std::atoi(year.c_str()) < 2009 || std::atoi(month.c_str()) > 12 || std::atoi(day.c_str()) > 31 || std::atoi(month.c_str()) == 0 || std::atoi(day.c_str()) == 0 || (std::atoi(year.c_str()) == 2009 && std::atoi(month.c_str()) == 1 && std::atoi(day.c_str()) == 1))
+        return (parsing_error(6),1) ;
+    else if (std::atoi(month.c_str())== 1 && std::atoi(day.c_str()) > 31)
+        return (parsing_error(6),1) ;
+    else if ((std::atoi(year.c_str())%4 != 0 && std::atoi(month.c_str())== 2 && std::atoi(day.c_str()) > 28 ) || (std::atoi(month.c_str())== 2 && std::atoi(day.c_str()) > 29) )
+        return (parsing_error(6),1);
+    else if (std::atoi(month.c_str())== 3 && std::atoi(day.c_str()) > 31)
+        return (parsing_error(6),1) ;
+    else if (std::atoi(month.c_str())== 4 && std::atoi(day.c_str()) > 30)
+        return (parsing_error(6),1) ;    
+    else if (std::atoi(month.c_str())== 5 && std::atoi(day.c_str()) > 31)
+        return (parsing_error(6),1) ;    
+    else if (std::atoi(month.c_str())== 6 && std::atoi(day.c_str()) > 30)
+        return (parsing_error(6),1) ;    
+    else if (std::atoi(month.c_str())== 7 && std::atoi(day.c_str()) > 31)
+        return (parsing_error(6),1) ;    
+    else if (std::atoi(month.c_str())== 8 && std::atoi(day.c_str()) > 31)
+        return (parsing_error(6),1) ;    
+    else if (std::atoi(month.c_str())== 9 && std::atoi(day.c_str()) > 30)
+        return (parsing_error(6),1) ;
+    else if (std::atoi(month.c_str())== 10 && std::atoi(day.c_str()) > 31)
+        return (parsing_error(6),1) ;    
+    else if (std::atoi(month.c_str())== 11 && std::atoi(day.c_str()) > 30)
+        return (parsing_error(6),1) ;    
+    else if (std::atoi(month.c_str())== 12 && std::atoi(day.c_str()) > 31)
         return (parsing_error(6),1) ;
     return 0;
 }

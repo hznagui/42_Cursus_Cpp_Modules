@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 14:33:38 by hznagui           #+#    #+#             */
-/*   Updated: 2024/02/01 18:11:15 by hznagui          ###   ########.fr       */
+/*   Updated: 2024/02/02 09:03:19 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,8 @@ void sortdeque(std::deque<int> &list, std::deque<int> &li,std::vector<unsigned i
     peer.clear();
     if (boll != -99)
         li.push_back(boll);
-    // jacob_number(jacob_sequence,li.size());
+    jacob_sequence.clear();
+    jacob_number(jacob_sequence,li.size());
     for (unsigned long i = 0; i < jacob_sequence.size() ; i++)
     {
         finish=jacob_sequence[i];

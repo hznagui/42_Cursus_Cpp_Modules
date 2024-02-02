@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 10:30:56 by hznagui           #+#    #+#             */
-/*   Updated: 2024/01/26 14:22:35 by hznagui          ###   ########.fr       */
+/*   Updated: 2024/02/02 09:00:54 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int parsing (std::string str)
 }
 int calcul(std::string main)
 {
-    std::stack<int> stack;
+    std::stack<int,std::list<int> > stack;
     std::stringstream cstr(main);
     std::string tmp;
     int a=0,b=0;
